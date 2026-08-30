@@ -1,0 +1,16 @@
+<div class="date-range">
+    <input type="date" class="form-control w-125px d-inline-block">
+    <button class="btn btn-secondary btn_clear fs-4" title="清空">
+        <i class="ki-solid ki-cross fs-2"></i>
+    </button>
+</div>
+
+<script>
+document.querySelectorAll('.btn_clear').forEach(button => {
+    button.addEventListener('click', function () {
+        const parent = this.closest('.date-range'); // 找到外層容器
+        const inputs = parent.querySelectorAll('input[type="date"]');
+        inputs.forEach(input => input.value = ''); // 清空值
+    });
+});
+</script>

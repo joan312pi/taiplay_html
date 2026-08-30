@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<head>
+	<title>TaiPlay後台管理系統</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" href="img/favicon.ico" />
+	<link href="css/datatables.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="css/plugins.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="scss/style.css" rel="stylesheet" type="text/css" />
+	<!--font icon-->
+	<link rel="stylesheet" href="css/all.min.css">
+	
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default body_color_01 left_menu_bg">
+
+	<div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+		<div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+			
+			<!--header start-->
+			<script>$.include("blocks/header.html");</script>
+			<!--header end-->
+			
+			<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+				
+				<!--left menu start-->
+				<script>$.include("blocks/left_menu.html");</script>
+				<!--left menu end-->
+
+				<!--main_con start-->
+				<div class="app-main flex-column flex-row-fluid" id="kt_app_main" style="background: #FAFAFA;">
+					<div class="d-flex flex-column flex-column-fluid p-9">
+
+						
+
+					</div>
+
+					<!--footer start-->
+                    <script>$.include("blocks/footer.html");</script>
+                    <!--footer end-->
+
+				</div>
+				<!--main_con end-->
+
+			</div>
+		</div>
+	</div>
+
+	<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+		<i class="ki-duotone ki-arrow-up">
+			<span class="path1"></span>
+			<span class="path2"></span>
+		</i>
+	</div>
+	
+	<script src="js/plugins.bundle.js"></script>
+	<script src="js/scripts.bundle.js"></script>
+	<script src="js/datatables.bundle.js"></script>
+
+	<script src="js/main_popover.js"></script>
+
+	<!--拖曳效果 start-->
+    <!-- <script src="js/sortable.min.js"></script>
+    <script>
+    new Sortable(service_list, {
+        animation: 150,
+        ghostClass: 'blue-background-class'
+    });
+    </script> -->
+    <!--拖曳效果 end-->
+
+	<!-- Modal start-->
+	<!--編輯服務項目 start-->
+	<div class="modal fade" id="service_edit" tabindex="-1" aria-labelledby="service_edit_label" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-title" id="service_edit_label">編輯服務項目</div>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+
+					<select class="form-control form-select w-auto float-start me-1">
+						<option value="" disabled selected hidden>請選擇項目</option>
+						<option value="item1">主要選單</option>
+						<option value="item2">上方選單</option>
+						<option value="item3">下方選單</option>
+						<option value="item4">模組</option>
+					</select>
+
+					<select multiple="multiple" class="sub-select item1 multiple-select multiple-select_3" placeholder="請選擇">
+						<optgroup class="item_1st" label="公告訊息">
+							<option class="item_2nd">最新消息</option>
+							<option class="item_3rd">中心公告</option>
+							<option class="item_3rd">活動訊息</option>
+							<option class="item_2nd">人才招募</option>
+							<option class="item_2nd">資訊公開</option>
+							<option class="item_2nd">災防新聞</option>
+							<option class="item_3rd">採購公告</option>
+							<option class="item_3rd">拒絕往來廠商</option>
+						</optgroup>
+						<option class="item_1st">關於中心</option>
+						<option class="item_1st">科技研發</option>
+					</select>
+
+					<select multiple="multiple" class="sub-select item2 multiple-select multiple-select_3" placeholder="請選擇" style="display: none !important;">
+						<option>網站導覽</option>
+					</select>
+
+					<select multiple="multiple" class="sub-select item3 multiple-select multiple-select_3" placeholder="請選擇" style="display: none !important;">
+						<option>隱私保護及網站安全政策宣告</option>
+						<option>意見信箱</option>
+					</select>
+
+
+					<select class="sub-select item4 form-control form-select w-auto float-start me-1" style="display: none;">
+						<option value="" disabled selected hidden>請選擇模組</option>
+						<option value="item4-1">圖文編輯</option>
+						<option value="item4-2">訊息管理</option>
+						<option value="item4-3">活動管理</option>
+						<option value="item4-4">大事記要</option>
+						<option value="item4-5">常見問題</option>
+						<option value="item4-6">表單管理</option>
+						<option value="item4-7">相關連結</option>
+						<option value="item4-8">文件下載</option>
+						<option value="item4-9">相本管理</option>
+						<option value="item4-10">影音管理</option>
+						<option value="item4-11">電子報管理</option>
+						<option value="item4-12">網站導覽</option>
+						<option value="item4-13">雙語詞彙</option>
+						<option value="item4-14">活動報名</option>
+						<option value="item4-15">歷年成果</option>
+						<option value="item4-16">圖書資料庫</option>
+						<option value="item4-17">出版品</option>
+						<option value="item4-18">人才招募</option>
+						<option value="item4-19">採購管理</option>
+					</select>
+
+					<select multiple="multiple" class="sub-select item4-1 multiple-select multiple-select_3" placeholder="請選擇" style="display: none !important;">
+						<option>關於我們</option>
+						<option>設立宗旨</option>
+						<option>組織架構</option>
+					</select>
+
+					<button class="btn btn-success align-top">
+						<i class="fa-solid fa-plus"></i>
+					</button>
+
+					<!--page_table start-->
+					<div class="page_table rounded border border-gray-300 mt-1">
+						<table class="table table-hover table-row-bordered table-row-gray-300 gy-4">
+							<thead>
+								<tr class="fw-bold fs-6">
+									<th width="50">選取</th>
+									<th width="80">模組</th>
+									<th>單元名稱</th>
+									<th width="50">顏色</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><a href="#" title="刪除" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></a></td>
+									<td>圖文編輯</td>
+									<td>關於我們</td>
+									<td>
+										<input type="color" id="colorPicker" name="colorPicker" list="presetColors" value="#03658c">
+
+										<datalist id="presetColors">
+											<option value="#03658c">藍</option>
+											<option value="#9bbf63">綠</option>
+											<option value="#e4a234">黃</option>
+											<option value="#a13f56">紅</option>
+											<option value="#704589">紫</option>
+										</datalist>
+
+									</td>
+								</tr>
+								<tr>
+									<td><a href="#" title="刪除" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></a></td>
+									<td>圖文編輯</td>
+									<td>設立宗旨</td>
+									<td>
+										<style>
+										/* 容器佈局 */
+										.color-picker {
+											display: flex;
+											gap: 10px;
+											padding: 10px;
+										}
+
+										/* 隱藏原始的 Radio 按鈕 */
+										.color-picker input[type="radio"] {
+											display: none;
+										}
+
+										/* 樣式化標籤（顏色圓圈） */
+										.color-picker label {
+											width: 20px;
+											height: 20px;
+											border-radius: 50%;
+											cursor: pointer;
+											border: 2px solid transparent;
+											transition: transform 0.2s, border-color 0.2s;
+											display: inline-block;
+											box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+										}
+
+										/* 當該顏色被選中時的樣式（加邊框或放大） */
+										.color-picker input[type="radio"]:checked + label {
+											/* border-color: #00b0f0; */
+											transform: scale(1.3);
+											/* box-shadow: 0 0 5px rgba(0,0,0,0.1); */
+										}
+
+										/* 滑鼠懸停效果 */
+										.color-picker label:hover {
+											opacity: 0.9;
+										}
+										</style>
+
+										<div class="color-picker">
+											<input type="radio" name="theme-color" id="color1" value="#03658c" checked>
+											<label for="color1" style="background-color: #03658c;"></label>
+
+											<input type="radio" name="theme-color" id="color2" value="#9bbf63">
+											<label for="color2" style="background-color: #9bbf63;"></label>
+
+											<input type="radio" name="theme-color" id="color3" value="#e4a234">
+											<label for="color3" style="background-color: #e4a234;"></label>
+
+											<input type="radio" name="theme-color" id="color4" value="#a13f56">
+											<label for="color4" style="background-color: #a13f56;"></label>
+
+											<input type="radio" name="theme-color" id="color5" value="#704589">
+											<label for="color5" style="background-color: #704589;"></label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td><a href="#" title="刪除" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></a></td>
+									<td>圖文編輯</td>
+									<td>組織架構</td>
+									<td><input type="color" value="#03658c"></td>
+								</tr>
+								<tr>
+									<td><a href="#" title="刪除" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></a></td>
+									<td>訊息模組</td>
+									<td>全部</td>
+									<td><input type="color" value="#03658c"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!--page_table end-->
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" data-bs-dismiss="modal">確認</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--編輯服務項目 end-->	
+	<!-- Modal end-->
+
+	<!--multiple-select start-->
+	<link href="css/multiple-select.min.css" rel="stylesheet">
+	<script src="js/multiple-select.min.js"></script>
+	<script>
+		$(function () {
+			$('.multiple-select_3').multipleSelect({
+				minimumCountSelected: 10000,
+				filterByDataLength: 20,//超過數量時，出現搜尋欄位
+				selectAll:true,    //全部選取按鈕
+				maxHeight:100, 
+			})
+		})
+	</script>
+	<!--multiple-select end-->
+
+	<!--index_service 下拉切換 start-->
+	<script>
+		$('select').on('change', function() {
+        // 1. 取得目前選取的值與元素對象
+        var selectedValue = $(this).val();
+        var $this = $(this);
+
+        // 2. 如果目前這個 select 是多選 (multiple)，通常不需要觸發顯示下一層的邏輯
+        //    或者我們不希望它隱藏掉自己，所以我們在這裡做個判斷。
+        if ($this.prop('multiple')) {
+            return; // 如果是多選，選取時不做任何切換動作
+        }
+
+        // 3. 隱藏邏輯：當父層改變時，隱藏「後面」所有的子選單
+        // nextAll 會尋找同層級之後的所有元素，確保不會影響到自己
+        $this.nextAll('.sub-select').css('cssText', 'display: none !important').val('');
+
+        // 4. 顯示邏輯：顯示對應的下一層
+        if (selectedValue) {
+            // 使用 cssText 強制覆蓋 inline style 的 !important
+            $('.' + selectedValue).css('cssText', 'display: inline-block !important');
+        }
+    });
+	</script>
+	<!--index_service 下拉切換 end-->
+
+</body>
+</html>

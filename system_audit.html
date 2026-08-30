@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+
+<head>
+    <title>TaiPlay後台管理系統</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link href="css/datatables.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="css/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="scss/style.css" rel="stylesheet" type="text/css" />
+    <!--font icon-->
+    <link rel="stylesheet" href="css/all.min.css">
+    
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true"
+    data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true"
+    data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true"
+    data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default body_color_01 left_menu_bg">
+
+    <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+
+            <!--header start-->
+            <script>$.include("blocks/header.html");</script>
+            <!--header end-->
+
+            <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+
+                <!--left menu start-->
+                <script>$.include("blocks/left_menu.html");</script>
+                <!--left menu end-->
+
+                <!--main_con start-->
+                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                    <div class="d-flex flex-column flex-column-fluid">
+
+                        <!--page_title star-->
+                        <div id="kt_app_toolbar" class="app-toolbar py-3">
+                            <div id="kt_app_toolbar_container" class="app-container  container-xxl d-flex flex-stack ">
+
+                                <!--title start-->
+                                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
+
+                                    <!--breadcrumb start-->
+                                    <ul class="breadcrumb breadcrumb-separatorless  my-0 py-1">
+                                        <li class="breadcrumb-item">
+                                            <a href="index.html">首頁</a>
+                                        </li>
+                                        <li class="breadcrumb-item">系統管理</li>
+                                    </ul>
+                                    <!--breadcrumb end-->
+
+                                    <h2 class="page-heading d-flex flex-column justify-content-center my-0">審核管理</h2>
+
+                                </div>
+                                <!--title end-->
+
+                            </div>
+
+                        </div>
+                        <!--page_title end-->
+
+                        <div class="app-container container-xxl pb-10">
+
+                            <!--page_search start-->
+                            <div class="page_search d-block">
+                                <div class="form_table rounded border border-gray-300">
+                                    <div class="row">
+                                        <div class="col-md-2 col-form-label">異動日期</div>
+                                        <div class="col-md-10 form_font">
+                                            <script>$.include("blocks/input_date.html");</script>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2 col-form-label">關鍵字</div>
+                                        <div class="col-md-4 form_font">
+                                            <input type="text" class="form-control" placeholder="單元名稱、標題、編輯人員、審核人員">
+                                        </div>
+                                        <div class="col-md-2 col-form-label">動作</div>
+                                        <div class="col-md-4 form_font">
+                                            <select class="form-control w-auto form-select">
+                                                <option value="">全部</option>
+                                                <option value="">新增</option>
+                                                <option value="">修改</option>
+                                                <option value="">刪除</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2 col-form-label">模組名稱</div>
+                                        <div class="col-md-4 form_font">
+                                            <select class="form-control w-auto form-select">
+                                                <option value="0">全部</option>
+                                                <option value="1">圖文編輯</option>
+                                                <option value="2">訊息管理</option>
+                                                <option value="3">活動管理</option>
+                                                <option value="4">大事記要</option>
+                                                <option value="5">常見問題</option>
+                                                <option value="6">表單管理</option>
+                                                <option value="7">相關連結</option>
+                                                <option value="8">文件下載</option>
+                                                <option value="9">相本管理</option>
+                                                <option value="10">影音管理</option>
+                                                <option value="11">電子報管理</option>
+                                                <option value="12">網站導覽</option>
+                                                <option value="13">雙語詞彙</option>
+                                                <option value="14">活動報名</option>
+                                                <option value="15">歷年成果</option>
+                                                <option value="16">圖書資料庫</option>
+                                                <option value="17">出版品</option>
+                                                <option value="18">人才招募</option>
+                                                <option value="19">採購管理</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2 col-form-label">審核狀態</div>
+                                        <div class="col-md-4 form_font">
+                                            <select class="form-control w-auto form-select">
+                                                <option value="">全部</option>
+                                                <option value="" selected>待審核</option>
+                                                <option value="">已通過</option>
+                                                <option value="">退件</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn_box pb-0">
+                                    <button type="submit" class="btn btn-secondary" title="清除">清除</button>
+                                    <button type="submit" class="btn btn-primary" title="搜尋">搜尋</button>
+                                </div>
+                            </div>
+                            <!--page_search end-->
+
+                            <!--page_table start-->
+                            <div class="page_table rounded border border-gray-300">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-row-bordered table-row-gray-300 gy-2">
+                                        <thead>
+                                            <tr class="fw-bold fs-6">
+                                                <th width="160" style="min-width: 90px;">異動時間</th>
+                                                <th width="60">動作</th>
+                                                <th width="100">編輯人員</th>
+                                                <th width="100">模組名稱</th>
+                                                <th width="100">單元名稱</th>
+                                                <th>標題</th>
+                                                <th width="100">審核人員</th>
+                                                <th width="90">審核狀態</th>
+                                                <!-- <th width="120">審核</th> -->
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2024/11/14 15:54:55</td>
+                                                <td>新增</td>
+                                                <td>admin</td>
+                                                <td>圖文編輯</td>
+                                                <td>關於我們</td>
+                                                <td>
+                                                    <a href="mod_page_edit.html" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-html="true" data-bs-content="關於我們">
+                                                        <span class="table_text">*關於我們</span>
+                                                    </a>
+                                                </td>
+                                                <td>admin</td>
+                                                <td>已通過</td>
+                                                <!-- <td></td> -->
+                                            </tr>
+                                            <tr>
+                                                <td>2024/11/14 15:54:55</td>
+                                                <td>修改</td>
+                                                <td>admin</td>
+                                                <td>訊息管理</td>
+                                                <td>最新消息</td>
+                                                <td>
+                                                    <a href="mod_news_edit.html" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-html="true" data-bs-content="防災新視界-探索氣候趨勢，從過去到未來!">
+                                                        <span class="table_text">*防災新視界-探索氣候趨勢，從過去到未來!</span>
+                                                    </a>
+                                                </td>
+                                                <td></td>
+                                                <td>待審核</td>
+                                                <!-- <td>
+                                                    <button type="submit" class="btn btn-success btn-sm">通過</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#return_modal">退件</button>
+                                                </td> -->
+                                            </tr>
+                                            <tr>
+                                                <td>2024/11/14 15:54:55</td>
+                                                <td>修改</td>
+                                                <td>admin</td>
+                                                <td>相關連結</td>
+                                                <td>國內</td>
+                                                <td>
+                                                    <a href="#" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-html="true" data-bs-content="臺南市政府防災資訊服務入口網">
+                                                        <span class="table_text">臺南市政府防災資訊服務入口網</span>
+                                                    </a>
+                                                </td>
+                                                <td>admin</td>
+                                                <td>退件</td>
+                                                <!-- <td></td> -->
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!--page_table end-->
+
+                            <!--pagination start-->
+                            <script>$.include("blocks/pagination.html");</script>
+                            <!--pagination end-->
+                            
+                        </div>
+
+                    </div>
+
+                    <!--footer start-->
+                    <script>$.include("blocks/footer.html");</script>
+                    <!--footer end-->
+
+                </div>
+                <!--main_con end-->
+
+            </div>
+        </div>
+    </div>
+
+    <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+        <i class="ki-duotone ki-arrow-up">
+            <span class="path1"></span>
+            <span class="path2"></span>
+        </i>
+    </div>
+
+    <script src="js/plugins.bundle.js"></script>
+    <script src="js/scripts.bundle.js"></script>
+    <script src="js/datatables.bundle.js"></script>
+
+    <!-- Modal start-->
+    <div class="modal fade" id="return_modal" tabindex="-1" aria-labelledby="return_label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title" id="return_label">退件原因</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <textarea rows="4" class="form-control" placeholder="請輸入退件原因(必填)" required></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal end-->
+
+</body>
+
+</html>

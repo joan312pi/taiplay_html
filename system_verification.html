@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+
+<head>
+    <title>TaiPlay後台管理系統</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link href="css/datatables.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="css/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="scss/style.css" rel="stylesheet" type="text/css" />
+    <!--font icon-->
+    <link rel="stylesheet" href="css/all.min.css">
+    
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true"
+    data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true"
+    data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true"
+    data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default body_color_01 left_menu_bg">
+
+    <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+
+            <!--header start-->
+            <script>$.include("blocks/header.html");</script>
+            <!--header end-->
+
+            <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+
+                <!--left menu start-->
+                <script>$.include("blocks/left_menu.html");</script>
+                <!--left menu end-->
+
+                <!--main_con start-->
+                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                    <div class="d-flex flex-column flex-column-fluid">
+
+                        <!--page_title star-->
+                        <div id="kt_app_toolbar" class="app-toolbar py-3">
+                            <div id="kt_app_toolbar_container" class="app-container  container-xxl d-flex flex-stack ">
+
+                                <!--title start-->
+                                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
+
+                                    <!--breadcrumb start-->
+                                    <ul class="breadcrumb breadcrumb-separatorless  my-0 py-1">
+                                        <li class="breadcrumb-item">
+                                            <a href="index.html">首頁</a>
+                                        </li>
+                                        <li class="breadcrumb-item">系統管理</li>
+                                    </ul>
+                                    <!--breadcrumb end-->
+
+                                    <h2 class="page-heading d-flex flex-column justify-content-center my-0">驗證管理</h2>
+
+                                </div>
+                                <!--title end-->
+
+                            </div>
+
+                        </div>
+                        <!--page_title end-->
+
+                        <div class="app-container container-xxl pb-10">
+
+                            <!--page_toolbar start-->
+                            <div class="page_toolbar app-content mt-1 mb-4">
+                                <div class="d-flex flex-wrap flex-stack">
+
+                                    <!--page_set start-->
+                                    <!-- <div class="page_set my-1">
+                                        <label for="settings">
+                                            <div class="title">管理項目</div>
+                                            <select class="form-control w-auto form-select" id="settings">
+                                                <option value="#">內容管理</option>
+                                                <option value="#">單元設定</option>
+                                                <option value="#">類別管理</option>
+                                            </select>
+                                        </label>
+                                        <label for="type" class="pe-1">
+                                            <div class="title">類別</div>
+                                            <select class="form-control w-auto form-select" id="type">
+                                                <option value="#">全部</option>
+                                                <option value="#">訊息</option>
+                                                <option value="#">公告</option>
+                                            </select>
+                                        </label>
+                                        <a href="#" class="btn btn-secondary align-top">管理</a>
+                                    </div> -->
+                                    <!--page_set end-->
+
+                                    <!--page_btn start-->
+                                    <div class="page_btn flex-wrap my-1 ms-auto">
+                                        <div class="m-0">
+                                            <button type="submit" class="btn btn-primary search_btn" title="搜尋">
+                                                <i class="fa-solid fa-magnifying-glass"></i> 
+                                            </button>
+                                            <button type="submit" class="btn btn-success" title="新增" data-bs-toggle="modal" data-bs-target="#edit_modal">
+                                                <i class="fa-solid fa-plus"></i>
+                                            </button>
+                                            <button type="submit" class="btn btn-danger" title="刪除">
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!--page_btn end-->
+                                </div>
+                            </div>
+                            <!--page_toolbar end-->
+
+                            <!--page_search start-->
+                            <div class="page_search search_con">
+                                <div class="form_table rounded border border-gray-300">
+                                    <div class="row">
+                                        <div class="col-md-2 col-form-label">項目</div>
+                                        <div class="col-md-4 form_font">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-2 col-form-label">啟用狀態</div>
+                                        <div class="col-md-4 form_font">
+                                            <select class="form-control w-auto form-select">
+                                                <option value="#">全部</option>
+                                                <option value="#">啟用</option>
+                                                <option value="#">未啟用</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn_box pb-0">
+                                    <button type="submit" class="btn btn-secondary" title="清除">清除</button>
+                                    <button type="submit" class="btn btn-primary" title="搜尋">搜尋</button>
+                                </div>
+                            </div>
+                            <!--page_search end-->
+
+                            <!--page_table start-->
+                            <div class="page_table rounded border border-gray-300">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-row-bordered table-row-gray-300 gy-2">
+                                        <thead>
+                                            <tr class="fw-bold">
+                                                <th class="text-center" width="50"><input class="form-check-input" type="checkbox"></th>
+                                                <th>項目</th>
+                                                <th>正規字串</th>
+                                                <th class="text-center" width="50">啟用</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center"><input class="form-check-input" type="checkbox"></td>
+                                                <td><a href="#" data-bs-toggle="modal" data-bs-target="#edit_modal">大小寫</a></td>
+                                                <td>/^[A-Z]{1}(?=.*\d)(?=.*[a-zA-Z]).{6,20}$/</td>
+                                                <td class="text-center"><input class="form-check-input" type="checkbox"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><input class="form-check-input" type="checkbox"></td>
+                                                <td><a href="#" data-bs-toggle="modal" data-bs-target="#edit_modal">限制8字</a></td>
+                                                <td>^\d{8}$</td>
+                                                <td class="text-center"><input class="form-check-input" type="checkbox"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!--page_table end-->
+
+                            <!--pagination start-->
+                            <script>$.include("blocks/pagination.html");</script>
+                            <!--pagination end-->
+                            
+                        </div>
+
+                    </div>
+
+                    <!--footer start-->
+                    <script>$.include("blocks/footer.html");</script>
+                    <!--footer end-->
+
+                </div>
+                <!--main_con end-->
+
+            </div>
+        </div>
+    </div>
+
+    <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+        <i class="ki-duotone ki-arrow-up">
+            <span class="path1"></span>
+            <span class="path2"></span>
+        </i>
+    </div>
+
+    <script src="js/plugins.bundle.js"></script>
+    <script src="js/scripts.bundle.js"></script>
+    <script src="js/datatables.bundle.js"></script>
+</body>
+
+<!-- Modal start-->
+<div class="modal fade" id="edit_modal" tabindex="-1" aria-labelledby="edit_label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="edit_label">編輯</div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="page_group w-105">
+                    <label class="item">
+                        <div class="title required">項目</div>
+                        <div class="input_font input-auto"><input type="text" class="form-control"></div>
+                    </label>
+                    <label class="item">
+                        <div class="title required">正規字串</div>
+                        <div class="input_font input-auto"><textarea class="form-control" rows="3"></textarea></div>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">確認</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal end-->
+
+
+</html>

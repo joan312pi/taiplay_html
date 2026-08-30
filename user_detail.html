@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+
+<head>
+    <title>TaiPlay後台管理系統</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link href="css/datatables.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="css/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="scss/style.css" rel="stylesheet" type="text/css" />
+    <!--font icon-->
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!--tinymce-->
+    <script src="https://cdn.tiny.cloud/1/1adhg4b1kc06unjm2tbxswleya4yo8bt3x8s932senq34okf/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
+    <script src="https://cdn.tiny.cloud/1/1adhg4b1kc06unjm2tbxswleya4yo8bt3x8s932senq34okf/tinymce/8/plugins.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
+</head>
+
+<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true"
+    data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true"
+    data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true"
+    data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default body_color_01 left_menu_bg">
+
+    <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+
+            <!--header start-->
+            <script>$.include("blocks/header.html");</script>
+            <!--header end-->
+
+            <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+
+                <!--left menu start-->
+                <script>$.include("blocks/left_menu.html");</script>
+                <!--left menu end-->
+
+                <!--main_con start-->
+                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                    <div class="d-flex flex-column flex-column-fluid">
+
+                        <!--page_title star-->
+                        <div id="kt_app_toolbar" class="app-toolbar py-3">
+                            <div id="kt_app_toolbar_container" class="app-container  container-xxl d-flex flex-stack ">
+
+                                <!--title start-->
+                                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
+
+                                    <!--breadcrumb start-->
+                                    <ul class="breadcrumb breadcrumb-separatorless  my-0 py-1">
+                                        <li class="breadcrumb-item">
+                                            <a href="index.html">首頁</a>
+                                        </li>
+                                        <li class="breadcrumb-item">會員管理</li>
+                                        <li class="breadcrumb-item"><a href="user.html">會員列表</a></li>
+                                    </ul>
+                                    <!--breadcrumb end-->
+
+                                    <h2 class="page-heading d-flex flex-column justify-content-center my-0">檢視會員資料</h2>
+
+                                </div>
+                                <!--title end-->
+
+                            </div>
+
+                        </div>
+                        <!--page_title end-->
+
+                        <div class="app-container container-xxl pb-10">
+
+                            <!--form_table start-->
+                            <div class="form_table rounded border border-gray-300">
+
+                                <div class="row">
+                                    <div class="col-md-2 col-form-label required">會員姓名</div>
+                                    <div class="col-md-4 form_font">王小明</div>
+                                    <div class="col-md-2 col-form-label required">Email</div>
+                                    <div class="col-md-4 form_font">service@taiplay.com</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-2 col-form-label">生日</div>
+                                    <div class="col-md-4 form_font">2000/08/01</div>
+                                    <div class="col-md-2 col-form-label">性別</div>
+                                    <div class="col-md-4 form_font">男</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-2 col-form-label">手機</div>
+                                    <div class="col-md-4 form_font">0912-345-678</div>
+                                    <div class="col-md-2 col-form-label">學歷</div>
+                                    <div class="col-md-4 form_font">大學</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-2 col-form-label">居住縣市</div>
+                                    <div class="col-md-4 form_font">台北市</div>
+                                    <div class="col-md-2 col-form-label">地址</div>
+                                    <div class="col-md-4 form_font">大安區和安里復興南路一段390號2樓</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-2 col-form-label">代表圖</div>
+                                    <div class="col-md-4 form_font">
+                                        <div class="view_file">
+                                            <a href="javascript:;" class="btn btn-dark m-1 float-left" title="檢視檔案">檢視檔案 <i class="fa-solid fa-download download"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-form-label">啟用</div>
+                                    <div class="col-md-4 form_font">
+                                        <label class="form-cheak-label">
+                                            <input class="form-check-input" type="radio" name="toggle_item_04" data-toggle="toggle_04_01" onclick="toggleChoice('toggle_item_04');" checked>是
+                                        </label>
+                                        <label class="form-cheak-label">
+                                            <input class="form-check-input" type="radio" name="toggle_item_04" data-toggle="toggle_04_02" onclick="toggleChoice('toggle_item_04');">否
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-2 col-form-label">新增</div>
+                                    <div class="col-md-4 form_font">
+                                        <div class="page_group w-50px">
+                                            <div class="item">
+                                                <div class="title">人員</div>
+                                                <div class="input_font input-auto">admin</div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="title">時間</div>
+                                                <div class="input_font input-auto">2024/09/12 10:07:29</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-form-label">最後修改</div>
+                                    <div class="col-md-4 form_font">
+                                        <div class="page_group w-50px">
+                                            <div class="item">
+                                                <div class="title">人員</div>
+                                                <div class="input_font input-auto">admin</div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="title">時間</div>
+                                                <div class="input_font input-auto">2024/09/12 10:07:29</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--form_table end-->
+                            
+                            <div class="btn_box pb-0">
+                                <button type="submit" class="btn btn-secondary" title="回上一頁" onclick="history.go(-1);return false;">回上一頁</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--footer start-->
+                    <script>$.include("blocks/footer.html");</script>
+                    <!--footer end-->
+
+                </div>
+                <!--main_con end-->
+
+            </div>
+        </div>
+    </div>
+
+    <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+        <i class="ki-duotone ki-arrow-up">
+            <span class="path1"></span>
+            <span class="path2"></span>
+        </i>
+    </div>
+
+    <script src="js/plugins.bundle.js"></script>
+    <script src="js/scripts.bundle.js"></script>
+    <script src="js/datatables.bundle.js"></script>
+
+    <!--ckeditor start-->
+    <script src="js/ckeditor/ckeditor-classic.bundle.js"></script>
+    <script>
+    document.querySelectorAll('.ckeditor_classic').forEach(textarea => {
+        ClassicEditor
+            .create(textarea)
+            .then(editor => {
+                console.log('Editor initialized for:', textarea);
+            })
+            .catch(error => {
+                console.error('Error initializing editor:', error);
+            });
+    });
+    </script>
+    <!--ckeditor end-->
+
+</body>
+</html>

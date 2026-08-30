@@ -1,0 +1,246 @@
+<div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
+						
+    <div class="app-sidebar-logo px-3" id="kt_app_sidebar_logo">
+        <a href="index.html">TaiPlay後台管理系統</a>
+        <div id="kt_app_sidebar_toggle" class="app-sidebar-toggle btn btn-icon btn-shadow btn-sm btn-color-muted btn-active-color-primary h-30px w-30px position-absolute top-50 start-100 translate-middle rotate" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="app-sidebar-minimize">
+            <i class="ki-duotone ki-black-left-line fs-3 rotate-180">
+                <span class="path1"></span>
+                <span class="path2"></span>
+            </i>
+        </div>
+        
+    </div>
+
+    <div class="app-sidebar-menu overflow-hidden flex-column-fluid">
+        <div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper">            
+
+            <div id="kt_app_sidebar_menu_scroll" class="menu_scroll" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer" data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true">
+                <div class="menu menu-column menu-rounded menu-sub-indention fw-semibold" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
+
+                    <div class="tab-content pt-5 pt-md-0" id="nav-tabContent">
+                        <div class="tab-pane tab_menu fade show active" id="menu_01">
+                            <!-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <span class="menu-link">
+                                    <span class="menu-icon">
+                                        <i class="ki-duotone ki-cd fs-2">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                            <span class="path3"></span>
+                                        </i>
+                                    </span>
+                                    <span class="menu-title">第一層</span>
+                                    <span class="menu-arrow"></span>
+                                </span>
+        
+                                <div class="menu-sub menu-sub-accordion">
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <span class="menu-link">
+                                            <span class="menu-title">第二層</span>
+                                            <span class="menu-arrow"></span>
+                                        </span>
+                                        <div class="menu-sub menu-sub-accordion">
+                                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                                <a href="#" class="menu-link">
+                                                    <span class="menu-title">第三層</span>
+                                                </a>
+                                            </div>
+                                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                                <span class="menu-link">
+                                                    <span class="menu-title">第三層</span>
+                                                    <span class="menu-arrow"></span>
+                                                </span>
+                                                <div class="menu-sub menu-sub-accordion">
+                                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                                        <a href="index.html" class="menu-link">
+                                                            <span class="menu-title">第四層</span>
+                                                        </a>
+                                                    </div>
+                                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                                        <a href="index.html" class="menu-link">
+                                                            <span class="menu-title">第四層</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <a href="activity_signup.html" class="menu-link">
+                                            <span class="menu-title">報名紀錄</span>
+                                        </a>
+                                    </div>
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <a href="project_report.html" class="menu-link">
+                                            <span class="menu-title">專案報表匯出</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <span class="menu-link">
+                                    <span class="menu-icon">
+                                        <i class="ki-duotone ki-geolocation fs-2">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>
+                                    </span>
+                                    <span class="menu-title">地圖管理</span>
+                                    <span class="menu-arrow"></span>
+                                </span>
+        
+                                <div class="menu-sub menu-sub-accordion">
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <a href="map_type.html" class="menu-link">
+                                            <span class="menu-title">地圖分類</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <span class="menu-link">
+                                    <span class="menu-icon">
+                                        <i class="ki-duotone ki-flag fs-2">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>
+                                    </span>
+                                    <span class="menu-title">景點管理</span>
+                                    <span class="menu-arrow"></span>
+                                </span>
+        
+                                <div class="menu-sub menu-sub-accordion">
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <a href="attractions.html" class="menu-link">
+                                            <span class="menu-title">景點列表</span>
+                                        </a>
+                                    </div>
+                                    <!-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <a href="activity_signup.html" class="menu-link">
+                                            <span class="menu-title">匯入景點</span>
+                                        </a>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <span class="menu-link">
+                                    <span class="menu-icon">
+                                        <i class="ki-duotone ki-route fs-2">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                            <span class="path3"></span>
+                                            <span class="path4"></span>
+                                        </i>
+                                    </span>
+                                    <span class="menu-title">行程管理</span>
+                                    <span class="menu-arrow"></span>
+                                </span>
+        
+                                <div class="menu-sub menu-sub-accordion">
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <a href="trip.html" class="menu-link">
+                                            <span class="menu-title">行程列表</span>
+                                        </a>
+                                    </div>
+                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                        <a href="trip_expense.html" class="menu-link">
+                                            <span class="menu-title">記帳管理</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <span class="menu-link">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-profile-user fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                    <span class="path3"></span>
+                                    <span class="path4"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">會員管理</span>
+                            <span class="menu-arrow"></span>
+                        </span>
+
+                        <div class="menu-sub menu-sub-accordion">
+                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <a href="user.html" class="menu-link">
+                                    <span class="menu-title">會員列表</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            
+
+                    <!--在線人數 start-->
+                    <!-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion online_people">
+                        <span class="menu-link">
+                            <span class="menu-icon">													
+                                <i class="ki-duotone ki-profile-user fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                    <span class="path3"></span>
+                                    <span class="path4"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">在線人數：88</span>
+                        </span>
+                    </div> -->
+                    <!--在線人數 end-->
+                    
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const selected = document.querySelector(".select-selected");
+        const items = document.querySelector(".select-items");
+        const tabContent = document.querySelectorAll(".tab_menu");
+
+        // 點擊選單展開選項
+        selected.addEventListener("click", function () {
+            items.classList.toggle("open");
+            selected.classList.toggle("show","active");
+        });
+
+        // 點擊選項時，切換選擇的內容和對應 tab
+        items.querySelectorAll("div").forEach(option => {
+            option.addEventListener("click", function () {
+                const selectedValue = this.getAttribute("data-value");
+
+                // 更新選單顯示的文字
+                selected.textContent = this.textContent;
+                selected.setAttribute("data-value", selectedValue);
+
+                // 切換對應的 tab_menu 顯示
+                tabContent.forEach(tab => {
+                    if (tab.id === selectedValue) {
+                        tab.classList.add("show","active");
+                    } else {
+                        tab.classList.remove("show","active");
+                    }
+                });
+
+                // 關閉選單
+                items.classList.remove("open");
+                selected.classList.remove("active");
+            });
+        });
+
+        // 點擊外部時關閉選單
+        document.addEventListener("click", function (e) {
+            if (!selected.contains(e.target) && !items.contains(e.target)) {
+                items.classList.remove("open");
+                selected.classList.remove("active");
+            }
+        });
+    });
+</script>

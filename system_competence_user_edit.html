@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+
+<head>
+    <title>TaiPlay後台管理系統</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link href="css/datatables.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="css/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="scss/style.css" rel="stylesheet" type="text/css" />
+    <!--font icon-->
+    <link rel="stylesheet" href="css/all.min.css">
+    
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true"
+    data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true"
+    data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true"
+    data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default body_color_01 left_menu_bg">
+
+    <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+
+            <!--header start-->
+            <script>$.include("blocks/header.html");</script>
+            <!--header end-->
+
+            <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+
+                <!--left menu start-->
+                <script>$.include("blocks/left_menu.html");</script>
+                <!--left menu end-->
+
+                <!--main_con start-->
+                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                    <div class="d-flex flex-column flex-column-fluid">
+
+                        <!--page_title star-->
+                        <div id="kt_app_toolbar" class="app-toolbar py-3">
+                            <div id="kt_app_toolbar_container" class="app-container  container-xxl d-flex flex-stack ">
+
+                                <!--title start-->
+                                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
+                                    
+                                    <!--breadcrumb start-->
+                                    <ul class="breadcrumb breadcrumb-separatorless  my-0 py-1">
+                                        <li class="breadcrumb-item">
+                                            <a href="index.html">首頁</a>
+                                        </li>
+                                        <li class="breadcrumb-item">系統管理</li>
+                                    </ul>
+                                    <!--breadcrumb end-->
+
+                                    <h2 class="page-heading d-flex flex-column justify-content-center my-0">編輯使用者權限管理</h2>
+
+                                </div>
+                                <!--title end-->
+
+                            </div>
+
+                        </div>
+                        <!--page_title end-->
+
+                        <div class="app-container container-xxl pb-10">
+
+                            <!--form_table start-->
+                            <div class="form_table rounded border border-gray-300">
+
+                                <div class="row">
+                                    <!-- <div class="col-md-2 col-form-label required">帳號類別</div>
+                                    <div class="col-md-4 form_font">
+                                        <select class="form-control w-auto form-select">
+                                            <option value="#">AD</option>
+                                            <option value="#">一般帳號</option>
+                                        </select>
+                                    </div> -->
+                                    <div class="col-md-2 col-form-label required">姓名</div>
+                                    <div class="col-md-4 form_font">
+                                        <input type="text" class="form-control input-small">
+                                        <div class="invalid-feedback">請輸入姓名</div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-2 col-form-label required">Email</div>
+                                    <div class="col-md-4 form_font">
+                                        <input type="text" class="form-control">
+                                        <div class="invalid-feedback">請輸入Email</div>
+                                    </div>
+                                    <div class="col-md-2 col-form-label required">帳號</div>
+                                    <div class="col-md-4 form_font">
+                                        <input type="text" class="form-control">
+                                        <div class="invalid-feedback">請輸入帳號</div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-2 col-form-label">電話</div>
+                                    <div class="col-md-4 form_font">
+                                        <input type="text" class="form-control input-small">
+                                        <div class="invalid-feedback">請輸入電話</div>
+                                    </div>
+                                    <div class="col-md-2 col-form-label">密碼</div>
+                                    <div class="col-md-4 form_font"><input type="text" class="form-control">
+                                        <div class="invalid-feedback">請輸入密碼</div>
+
+                                        <!-- <button type="button" class="btn btn-dark btn-sm" title="重置密碼" data-bs-toggle="modal" data-bs-target="#change_password">
+                                            重置密碼
+                                        </button>
+                                        <span class="font_nowrap">
+                                            有效期限：2026/4/14 09:30 
+                                            <a href="https://www.youtube.com/" class="copy-btn" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-html="true" data-bs-content="複製密碼連結"><i class="fa-regular fa-copy"></i></a>
+                                        </span> -->
+                                    </div>
+                                </div>
+
+                                <!-- <div class="row">
+                                    <div class="col-md-2 col-form-label required">權限群組</div>
+                                    <div class="col-md-10 form_font">
+                                        <select class="form-control w-auto form-select">
+                                            <option value="" disabled selected hidden>請選擇</option>
+                                            <option value="#">超級管理者</option>
+                                            <option value="#">資訊組組長</option>
+                                            <option value="#">氣象組組員</option>
+                                        </select>
+                                        <div class="invalid-feedback">請選擇權限群組</div>
+                                    </div>
+                                </div> -->
+<!-- 
+                                <div class="row">
+                                    <div class="col-md-2 col-form-label">審核權限</div>
+                                    <div class="col-md-10 form_font">
+                                        <label class="form-cheak-label">
+                                            <input class="form-check-input" type="radio" name="radio_02" checked>無
+                                        </label>
+                                        <label class="form-cheak-label">
+                                            <input class="form-check-input" type="radio" name="radio_02">檢視審核
+                                        </label>
+                                        <label class="form-cheak-label">
+                                            <input class="form-check-input" type="radio" name="radio_02">審核、可修改
+                                        </label>
+                                    </div>
+                                </div> -->
+
+                                <div class="row">
+                                    <div class="col-md-2 col-form-label">使用期限</div>
+                                    <div class="col-md-10 form_font">
+                                        <label class="form-cheak-label">
+                                            <input class="form-check-input" type="radio" name="toggle_item_01" data-toggle="toggle_01" onclick="toggleChoice('toggle_item_01');" checked="">無限期
+                                        </label>
+                                        <label class="form-cheak-label">
+                                            <input class="form-check-input" type="radio" name="toggle_item_01" data-toggle="toggle_02" onclick="toggleChoice('toggle_item_01');">有
+                                        </label>
+                                        <span class="d-inline-block">
+                                            <div class="toggle_02" style="display: none;">
+                                                <div class="date-range">
+                                                    <input type="date" class="form-control w-125px d-inline-block">
+                                                    <div class="d-inline-block">~</div>
+                                                    <input type="date" class="form-control w-125px d-inline-block">
+                                                    <button class="btn btn-secondary btn_clear fs-4" title="清空">
+                                                        <i class="ki-solid ki-cross fs-2"></i>
+                                                    </button>
+                                                </div>
+                                                
+                                                <script>
+                                                document.querySelectorAll('.btn_clear').forEach(button => {
+                                                    button.addEventListener('click', function () {
+                                                        const parent = this.closest('.date-range'); // 找到外層容器
+                                                        const inputs = parent.querySelectorAll('input[type="date"]');
+                                                        inputs.forEach(input => input.value = ''); // 清空值
+                                                    });
+                                                });
+                                                </script>
+
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-2 col-form-label">啟用</div>
+                                    <div class="col-md-10 form_font">
+                                        <label class="form-cheak-label">
+                                            <input class="form-check-input" type="radio" name="toggle_item_04" data-toggle="toggle_04_01" onclick="toggleChoice('toggle_item_04');" checked>是
+                                        </label>
+                                        <label class="form-cheak-label">
+                                            <input class="form-check-input" type="radio" name="toggle_item_04" data-toggle="toggle_04_02" onclick="toggleChoice('toggle_item_04');">否
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="btn_box pb-0">
+                                <button type="submit" class="btn btn-secondary" title="回上一頁" onclick="history.go(-1);return false;">回上一頁</button>
+                                <button type="submit" class="btn btn-primary" title="儲存">儲存</button>
+                            </div>
+                            <!--form_table end-->
+                            
+                        </div>
+
+
+                    </div>
+
+                    <!--footer start-->
+                    <script>$.include("blocks/footer.html");</script>
+                    <!--footer end-->
+
+                </div>
+                <!--main_con end-->
+
+            </div>
+        </div>
+    </div>
+
+    <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+        <i class="ki-duotone ki-arrow-up">
+            <span class="path1"></span>
+            <span class="path2"></span>
+        </i>
+    </div>
+
+    <script src="js/plugins.bundle.js"></script>
+    <script src="js/scripts.bundle.js"></script>
+    <script src="js/datatables.bundle.js"></script>
+    
+    <!-- Modal start-->
+    <!--重置密碼-->
+    <div class="modal fade" id="change_password" tabindex="-1" aria-labelledby="change_password_label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title" id="change_password_label">重置密碼</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    確定要重置密碼嗎？<br>
+                    重置後，將會寄送密碼設定連結，請使用者於<span class="red">24小時</span>內點擊連結修改密碼。
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#send_password">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="send_password" tabindex="-1" aria-labelledby="send_password_label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title" id="send_password_label">寄送密碼設定連結</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span class="font_nowrap">
+                        有效期限：2026/4/14 09:30 
+                        <a href="https://www.youtube.com/" class="copy-btn" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-html="true" data-bs-content="複製密碼連結"><i class="fa-regular fa-copy"></i></a>
+                    </span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">發送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal end-->
+    
+    <!--複製密碼連結 start-->
+    <script>
+        $(document).ready(function() {
+            // 監聽所有具備特定用途的 copy-link 點擊事件
+            // 建議在 HTML 加入一個 class 例如 'copy-btn'
+            $('a[data-bs-content="複製密碼連結"]').on('click', function(e) {
+                e.preventDefault(); // 阻止網頁跳轉到該連結
+
+                const urlToCopy = $(this).attr('href'); // 取得 href 網址
+                const $this = $(this);
+
+                // 執行複製到剪貼簿
+                navigator.clipboard.writeText(urlToCopy).then(function() {
+                    // --- 複製成功後的視覺回饋 ---
+                    
+                    // 1. 取得舊的 Popover 內容
+                    const originalContent = $this.attr('data-bs-content');
+
+                    // 2. 更新 Popover 內容為「已複製！」
+                    $this.attr('data-bs-content', '已複製！');
+                    
+                    // 3. 重新顯示 Popover 以反映新內容
+                    const popover = bootstrap.Popover.getInstance($this[0]);
+                    if (popover) {
+                        popover.setContent({
+                            '.popover-body': '已複製！'
+                        });
+                    }
+
+                    // 4. 設定 1.5 秒後關閉並還原
+                    setTimeout(function() {
+                        popover.hide(); // 關閉 Popover
+
+                        // 在隱藏後，悄悄把文字改回原始設定，以便下次滑過時顯示正確
+                        setTimeout(function() {
+                            $this.attr('data-bs-content', originalContent);
+                            popover.setContent({
+                                '.popover-body': originalContent
+                            });
+                        }, 200); // 稍微延遲還原文字，避免使用者在關閉動畫中看到文字變換
+                        
+                    }, 1500);
+
+                }).catch(function(err) {
+                    console.error('無法複製文字: ', err);
+                });
+            });
+        });
+    </script>
+    <!--複製密碼連結 end-->
+</body>
+</html>

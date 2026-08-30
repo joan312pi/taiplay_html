@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<head>
+	<title>TaiPlay後台管理系統</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" href="img/favicon.ico" />
+	<link href="css/datatables.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="css/plugins.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="scss/style.css" rel="stylesheet" type="text/css" />
+	<!--font icon-->
+	<link rel="stylesheet" href="css/all.min.css">
+	<!--  -->
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body class="body_color_01"><!--body_color_01~05切換色系-->
+
+	<div class="d-flex flex-column flex-root login">
+		<div class="d-flex flex-column flex-md-row flex-column-fluid">
+
+			<div class="d-flex flex-column flex-md-row-fluid w-md-50 bgi-size-cover bgi-position-center order-1 order-md-1 login_font" style="background: url(img/login_bg.jpg); background-size: cover;">
+				<div class="d-flex flex-center flex-column flex-md-row-fluid">
+					<div class="w-lg-500px p-10 w-100">
+						<div class="text-center">
+							<div class="mb-3">
+								<img src="img/logo.svg" class="mb-7 login_logo"><br>
+								歡迎您使用後台管理系統，如操作上有遇任何問題，<br>
+								可透過下列連絡方式與我們聯絡，我們將派專員為您服務。<br>
+								<div class="d-inline font_nowrap">
+									<i class="fa-solid fa-phone"></i> . 
+									<span>886-2-1234-4567</span> &nbsp;&nbsp;&nbsp;
+								</div>
+								<div class="d-inline font_nowrap">
+									<i class="fa-solid fa-envelope"></i> . 
+									<span>service@taiplay.com</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="d-flex flex-column flex-md-row-fluid w-md-50 p-10 order-2 order-md-2 bgi-size-cover bgi-position-center login_input">
+				<div class="d-flex flex-center flex-column flex-md-row-fluid">
+					<div class="w-lg-400px p-10 w-100">
+						<!-- <form class="form"> -->
+							
+							<div class="text-center mb-11">
+								<h2 class="mb-6">
+									網站管理登入
+								</h2>
+							</div>
+							
+							<!-- <div class="form-floating mb-5">
+								<input type="text" placeholder="帳號" name="id" id="floatingInput" class="form-control" />
+								<label for="floatingInput">帳號</label>
+							</div>
+
+							<div class="form-floating mb-5 show_hide_password">
+								<input type="password" placeholder="密碼" name="password" id="floatingInput"  class="form-control" />
+								<label for="floatingInput">密碼</label>
+								<i class="ki-duotone ki-eye-slash fs-2 password_eye" aria-hidden="true">
+									<span class="path1"></span>
+									<span class="path2"></span>
+									<span class="path3"></span>
+									<span class="path4"></span>
+								</i>
+							</div> -->
+
+							<div class="mb-5">
+								<input type="text" placeholder="帳號" class="form-control" />
+							</div>
+
+							<div class="mb-5 show_hide_password">
+								<input type="password" placeholder="密碼" class="form-control" />
+								<i class="ki-duotone ki-eye-slash fs-2 password_eye" aria-hidden="true">
+									<span class="path1"></span>
+									<span class="path2"></span>
+									<span class="path3"></span>
+									<span class="path4"></span>
+								</i>
+							</div>
+
+							<div class="verification_code mb-5">
+								<input type="text" placeholder="請輸入驗證碼" class="form-control input-small d-inline" />
+								<img id="CaptchaImage" src="img/Pic_Check01.gif" alt="驗證碼" style="height: 36px !important;vertical-align: top;">
+								<a href="#" class="code_btn p-2" title="驗證碼重新整理">
+									<i class="fa fa-refresh" aria-hidden="true"></i>
+									<span class="sr-only">驗證碼重新整理</span>
+								</a>
+								<!-- <a href="#" class="p-2" title="驗證碼語音播放">
+									<i class="fa fa-volume-up" aria-hidden="true"></i>
+									<span class="sr-only">驗證碼語音播放</span>
+								</a> -->
+							</div>
+							
+							<!-- <div class="mb-5">
+								<a href="#" class="link-primary" data-bs-toggle="modal" data-bs-target="#edit_modal">忘記密碼 ?</a>
+							</div> -->
+							<div class="d-grid mb-10">
+								<button class="btn btn-primary" onclick="location.href='index.html'">登入</button>
+								<!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#password_modal">
+									登入-密碼將於15天內到期
+								</button>
+								<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#password_exp_modal">
+									登入-密碼到期
+								</button>
+								<button class="btn btn-primary" onclick="location.href='login_two_factor.html'">
+									登入-雙重認證
+								</button> -->
+							</div>
+						<!-- </form> -->
+					</div>
+				</div>
+				
+			</div>
+
+			
+		</div>
+	</div>
+	
+	<script src="js/plugins.bundle.js"></script>
+	<script src="js/scripts.bundle.js"></script>
+	<script src="js/datatables.bundle.js"></script>
+
+	<!-- Modal start-->
+	<div class="modal fade" id="edit_modal" tabindex="-1" aria-labelledby="edit_label" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-title" id="edit_label">忘記密碼</div>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<ol>
+						<li>請輸入您原先設定的電子郵件信箱,我們會寄一封密碼通知函給您。</li>
+						<li>若原先設定電子郵件信箱有誤,可能導致無法收到密碼通知函,若發生此狀況, 請聯絡客服。</li>
+					</ol>
+					<input type="text" class="form-control" placeholder="請輸入註冊Email">
+					<div class="verification_code mt-5">
+						<input type="text" placeholder="請輸入驗證碼" class="form-control input-small d-inline" />
+						<img id="CaptchaImage" src="img/Pic_Check01.gif" alt="驗證碼" style="height: 36px !important;vertical-align: top;">
+						<a href="#" class="code_btn p-2" title="驗證碼重新整理">
+							<i class="fa fa-refresh" aria-hidden="true"></i>
+							<span class="sr-only">驗證碼重新整理</span>
+						</a>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" data-bs-dismiss="modal">確認</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal fade" id="password_modal" tabindex="-1" aria-labelledby="password_label" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-title" id="password_label">密碼即將到期</div>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					密碼將於15天內到期，請您於到期前重新設定密碼，<br>
+					若您不想更改密碼，請按下「取消」按鈕，<br>
+					若您想更改密碼，請按下「確認」按鈕，將進行變更密碼。
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" onclick="location.href='index.html'">取消</button>
+					<!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="location.href='system_password.html'">確認</button> -->
+					<button type="button" class="btn btn-primary" onclick="location.href='login_password.html'">確認</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="password_edit_modal" tabindex="-1" aria-labelledby="password_edit_label" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-title" id="password_edit_label">變更密碼</div>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="login_password mb-5 show_hide_password" data-kt-password-meter="true">
+						<input type="password" name="password" class="form-control input_no_paste" autocomplete="off" placeholder="原密碼"/>
+						<i class="ki-duotone ki-eye-slash fs-2 password_eye" aria-hidden="true">
+							<span class="path1"></span>
+							<span class="path2"></span>
+							<span class="path3"></span>
+							<span class="path4"></span>
+						</i>
+
+						<!--password bar start-->
+						<!-- <div class="d-flex align-items-center my-1" data-kt-password-meter-control="highlight">
+							<div class="flex-grow-1 bg-secondary bg-active-danger rounded h-5px me-2"></div>
+							<div class="flex-grow-1 bg-secondary bg-active-warning rounded h-5px me-2"></div>
+							<div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+							<div class="flex-grow-1 bg-secondary bg-active-primary rounded h-5px"></div>
+						</div> -->
+						<!--password bar end-->
+					</div>
+
+					<div class="login_password mb-5 show_hide_password" data-kt-password-meter="true">
+						<input type="password" name="password" class="form-control input_no_paste" autocomplete="off" placeholder="新密碼"/>
+						<i class="ki-duotone ki-eye-slash fs-2 password_eye" aria-hidden="true">
+							<span class="path1"></span>
+							<span class="path2"></span>
+							<span class="path3"></span>
+							<span class="path4"></span>
+						</i>
+
+						<!--password bar start-->
+						<div class="d-flex align-items-center my-1" data-kt-password-meter-control="highlight">
+							<div class="flex-grow-1 bg-secondary bg-active-danger rounded h-5px me-2"></div>
+							<div class="flex-grow-1 bg-secondary bg-active-warning rounded h-5px me-2"></div>
+							<div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+							<div class="flex-grow-1 bg-secondary bg-active-primary rounded h-5px"></div>
+						</div>
+						<!--password bar end-->
+					</div>
+
+					<div class="login_password mb-5 show_hide_password" data-kt-password-meter="true">
+						<input type="password" name="password" class="form-control input_no_paste" autocomplete="off" placeholder="再次輸入新密碼"/>
+						<i class="ki-duotone ki-eye-slash fs-2 password_eye" aria-hidden="true">
+							<span class="path1"></span>
+							<span class="path2"></span>
+							<span class="path3"></span>
+							<span class="path4"></span>
+						</i>
+
+						<!--password bar start-->
+						<div class="d-flex align-items-center my-1" data-kt-password-meter-control="highlight">
+							<div class="flex-grow-1 bg-secondary bg-active-danger rounded h-5px me-2"></div>
+							<div class="flex-grow-1 bg-secondary bg-active-warning rounded h-5px me-2"></div>
+							<div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+							<div class="flex-grow-1 bg-secondary bg-active-primary rounded h-5px"></div>
+						</div>
+						<!--password bar end-->
+					</div>
+
+					<!-- <div class="verification_code mt-5">
+						<input type="text" placeholder="請輸入驗證碼" class="form-control input-small d-inline" />
+						<img id="CaptchaImage" src="img/Pic_Check01.gif" alt="驗證碼" style="height: 36px !important;vertical-align: top;">
+						<a href="#" class="code_btn p-2" title="驗證碼重新整理">
+							<i class="fa fa-refresh" aria-hidden="true"></i>
+							<span class="sr-only">驗證碼重新整理</span>
+						</a>
+					</div> -->
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" onclick="location.href='index.html'">取消</button>
+					<button type="button" class="btn btn-primary" onclick="location.href='system_password.html'">確認</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="password_exp_modal" tabindex="-1" aria-labelledby="password_exp_label" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-title" id="password_exp_label">密碼已到期</div>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					系統密碼已到期，請您重新設定密碼，<br>
+					按下「確認」按鈕，系統將會導引您至變更密碼的頁面。
+					<!-- <br><br>
+					<label class="form-cheak-label">
+						<input class="form-check-input" type="checkbox">延用舊密碼
+						<span class="form-check-label">（若您不想更改密碼，請勾選此選項）</span>
+					</label> -->
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" onclick="location.href='login_password.html'">確認</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal end-->
+	
+</body>
+</html>
