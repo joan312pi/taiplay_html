@@ -12,6 +12,7 @@
     <link href="scss/style.css" rel="stylesheet" type="text/css" />
     <!--font icon-->
     <link rel="stylesheet" href="css/all.min.css">
+    
 
     <script src="js/jquery.min.js"></script>
     <script src="js/main.js"></script>
@@ -70,12 +71,13 @@
                             <!--tab menu start-->
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <button class="nav-link hvr-overline-from-center active" type="button" onclick="location.href='attractions.html'">檢視景點</button>
-                                    <button class="nav-link hvr-overline-from-center" type="button" onclick="location.href='attractions_map.html'">地圖分類</button>
+                                    <button class="nav-link hvr-overline-from-center" type="button" onclick="location.href='attractions.html'">檢視景點</button>
+                                    <button class="nav-link hvr-overline-from-center active" type="button" onclick="location.href='attractions_map.html'">地圖分類</button>
                                 </div>
                             </nav>
                             <!--tab menu end-->
 
+                            
                             <!--page_toolbar start-->
                             <div class="page_toolbar app-content mt-1 mb-4">
                                 <div class="d-flex flex-wrap flex-stack">
@@ -83,10 +85,7 @@
                                     <!--page_btn start-->
                                     <div class="page_btn flex-wrap my-1 ms-auto">
                                         <div class="m-0">
-                                            <button type="submit" class="btn btn-primary search_btn" title="搜尋">
-                                                <i class="fa-solid fa-magnifying-glass"></i> 
-                                            </button>
-                                            <button type="submit" class="btn btn-success" title="新增" onclick="location.href='attractions_edit.html'">
+                                            <button type="submit" class="btn btn-success" title="新增" onclick="location.href='attractions_map_edit.html'">
                                                 <i class="fa-solid fa-plus"></i>
                                             </button>
                                             <button type="submit" class="btn btn-danger" title="刪除">
@@ -99,50 +98,6 @@
                             </div>
                             <!--page_toolbar end-->
 
-                            <!--page_search start-->
-                            <div class="page_search search_con">
-                                <div class="form_table rounded border border-gray-300">
-                                    <div class="row">
-                                        <div class="col-md-2 col-form-label">關鍵字</div>
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" placeholder="標題">
-                                        </div>
-                                        <div class="col-md-2 col-form-label">類別</div>
-                                        <div class="col-md-4">
-                                            <select class="form-control w-auto form-select">
-                                                <option value="#">全部</option>
-                                                <option value="#">景點</option>
-                                                <option value="#">美食</option>
-                                                <option value="#">購物</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-2 col-form-label">縣市</div>
-                                        <div class="col-md-4">
-                                            <select class="form-control w-auto form-select">
-                                                <option value="#">全部</option>
-                                                <option value="#">台北市</option>
-                                                <option value="#">新北市</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-2 col-form-label">啟用</div>
-                                        <div class="col-md-4">
-                                            <select class="form-control w-auto form-select">
-                                                <option value="#">全部</option>
-                                                <option value="#">開啟</option>
-                                                <option value="#">關閉</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="btn_box pb-0">
-                                    <button type="submit" class="btn btn-secondary" title="清除">清除</button>
-                                    <button type="submit" class="btn btn-primary" title="搜尋">搜尋</button>
-                                </div>
-                            </div>
-                            <!--page_search end-->
-
                             <!--page_table start-->
                             <div class="page_table rounded border border-gray-300">
                                 <div class="table-responsive">
@@ -150,17 +105,15 @@
                                         <thead>
                                             <tr class="fw-bold">
                                                 <th class="text-center" width="50"><input class="form-check-input" type="checkbox"></th>
-                                                <!-- <th width="190">排序</th> -->
+                                                <th width="190">排序</th>
                                                 <th>標題</th>
-                                                <th width="80">類別</th>
-                                                <th width="80">縣市</th>
                                                 <th class="text-center" width="70">啟用</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td class="text-center"><input class="form-check-input" type="checkbox"></td>
-                                                <!-- <td class="sorting_btn">
+                                                <td class="sorting_btn">
                                                     <button type="button" class="btn btn-default btn-xs">
                                                         <i class="ki-solid ki-double-up"></i>
                                                     </button>
@@ -174,10 +127,8 @@
                                                         <i class="ki-solid ki-double-down"></i>
                                                     </button>
                                                     <input type="text" value="1" class="form-control d-inline-block w-50px">
-                                                </td> -->
-                                                <td><a href="attractions_edit.html">松山文創園區</a></td>
-                                                <td>景點</td>
-                                                <td>台北市</td>
+                                                </td>
+                                                <td><a href="attractions_map_edit.html">景點</a></td>
                                                 <td class="text-center">
                                                     <!-- <input class="form-check-input" type="checkbox"> -->
                                                     <div class="form-check form-switch form-check-solid">
@@ -187,7 +138,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="text-center"><input class="form-check-input" type="checkbox"></td>
-                                                <!-- <td class="sorting_btn">
+                                                <td class="sorting_btn">
                                                     <button type="button" class="btn btn-default btn-xs">
                                                         <i class="ki-solid ki-double-up"></i>
                                                     </button>
@@ -201,10 +152,9 @@
                                                         <i class="ki-solid ki-double-down"></i>
                                                     </button>
                                                     <input type="text" value="2" class="form-control d-inline-block w-50px">
-                                                </td> -->
-                                                <td><a href="attractions_edit.html">鼎泰豐</a></td>
-                                                <td>美食</td>
-                                                <td>台北市</td>
+                                                </td>
+                                                <td><a href="attractions_map_edit.html">收藏</a></td>
+                                                
                                                 <td class="text-center">
                                                     <!-- <input class="form-check-input" type="checkbox"> -->
                                                     <div class="form-check form-switch form-check-solid">
@@ -214,7 +164,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="text-center"><input class="form-check-input" type="checkbox"></td>
-                                                <!-- <td class="sorting_btn">
+                                                <td class="sorting_btn">
                                                     <button type="button" class="btn btn-default btn-xs">
                                                         <i class="ki-solid ki-double-up"></i>
                                                     </button>
@@ -228,10 +178,8 @@
                                                         <i class="ki-solid ki-double-down"></i>
                                                     </button>
                                                     <input type="text" value="3" class="form-control d-inline-block w-50px">
-                                                </td> -->
-                                                <td><a href="attractions_edit.html">台北101購物中心</a></td>
-                                                <td>購物</td>
-                                                <td>台北市</td>
+                                                </td>
+                                                <td><a href="attractions_map_edit.html">美食</a></td>
                                                 <td class="text-center">
                                                     <!-- <input class="form-check-input" type="checkbox"> -->
                                                     <div class="form-check form-switch form-check-solid">
@@ -273,7 +221,23 @@
 
     <script src="js/plugins.bundle.js"></script>
     <script src="js/scripts.bundle.js"></script>
-    <script src="js/main_popover.js"></script>
+        <script src="js/main_popover.js"></script>
+
+    <!--ckeditor start-->
+    <script src="js/ckeditor/ckeditor-classic.bundle.js"></script>
+    <script>
+    document.querySelectorAll('.ckeditor_classic').forEach(textarea => {
+        ClassicEditor
+            .create(textarea)
+            .then(editor => {
+                console.log('Editor initialized for:', textarea);
+            })
+            .catch(error => {
+                console.error('Error initializing editor:', error);
+            });
+    });
+    </script>
+    <!--ckeditor end-->
 
 </body>
 </html>
