@@ -1192,9 +1192,11 @@ input[type=color] {
   padding: 5%;
 }
 
-#chart1, #chart2, #chart3 {
+#chart1 {
   max-width: 300px;
   max-height: 300px;
+  width: 300px;
+  height: 300px;
 }
 
 /*chart_list*/
