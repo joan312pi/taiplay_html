@@ -1,7 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-hant-tw">
-
-<head>
+  <head>
     <title>TaiPlay後台管理系統</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,169 +10,205 @@
     <link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
     <link href="scss/style.css" rel="stylesheet" type="text/css" />
     <!--font icon-->
-    <link rel="stylesheet" href="css/all.min.css">
-    
+    <link rel="stylesheet" href="css/all.min.css" />
 
     <script src="js/jquery.min.js"></script>
     <script src="js/main.js"></script>
-</head>
+  </head>
 
-<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true"
-    data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true"
-    data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true"
-    data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default body_color_01 left_menu_bg">
-
+  <body
+    id="kt_app_body"
+    data-kt-app-layout="dark-sidebar"
+    data-kt-app-header-fixed="true"
+    data-kt-app-sidebar-enabled="true"
+    data-kt-app-sidebar-fixed="true"
+    data-kt-app-sidebar-hoverable="true"
+    data-kt-app-sidebar-push-header="true"
+    data-kt-app-sidebar-push-toolbar="true"
+    data-kt-app-sidebar-push-footer="true"
+    data-kt-app-toolbar-enabled="true"
+    class="app-default body_color_01 left_menu_bg"
+  >
     <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
-        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+      <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+        <!--header start-->
+        <script>
+          $.include("blocks/header.html");
+        </script>
+        <!--header end-->
 
-            <!--header start-->
-            <script>$.include("blocks/header.html");</script>
-            <!--header end-->
+        <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+          <!--left menu start-->
+          <script>
+            $.include("blocks/left_menu.html");
+          </script>
+          <!--left menu end-->
 
-            <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+          <!--main_con start-->
+          <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+            <div class="d-flex flex-column flex-column-fluid">
+              <!--main content start-->
+              <!--page_title star-->
+              <div id="kt_app_toolbar" class="app-toolbar py-3">
+                <div
+                  id="kt_app_toolbar_container"
+                  class="app-container container-xxl d-flex flex-stack"
+                >
+                  <!--title start-->
+                  <div
+                    class="page-title d-flex flex-column justify-content-center flex-wrap me-3"
+                  >
+                    <!--breadcrumb start-->
+                    <ul class="breadcrumb breadcrumb-separatorless my-0 py-1">
+                      <li class="breadcrumb-item">
+                        <a href="index.html">首頁</a>
+                      </li>
+                      <li class="breadcrumb-item">行程管理</li>
+                      <li class="breadcrumb-item">
+                        <a href="trip_expense.html">記帳管理</a>
+                      </li>
+                    </ul>
+                    <!--breadcrumb end-->
 
-                <!--left menu start-->
-                <script>$.include("blocks/left_menu.html");</script>
-                <!--left menu end-->
-
-                <!--main_con start-->
-                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-                    <div class="d-flex flex-column flex-column-fluid">
-
-                        <!--page_title star-->
-                        <div id="kt_app_toolbar" class="app-toolbar py-3">
-                            <div id="kt_app_toolbar_container" class="app-container  container-xxl d-flex flex-stack ">
-
-                                <!--title start-->
-                                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
-
-                                    <!--breadcrumb start-->
-                                    <ul class="breadcrumb breadcrumb-separatorless  my-0 py-1">
-                                        <li class="breadcrumb-item">
-                                            <a href="index.html">首頁</a>
-                                        </li>
-                                        <li class="breadcrumb-item">行程管理</li>
-                                        <li class="breadcrumb-item"><a href="trip_expense.html">記帳管理</a></li>
-                                    </ul>
-                                    <!--breadcrumb end-->
-
-                                    <h2 class="page-heading d-flex flex-column justify-content-center my-0">台北文青二日遊-費用分析</h2>
-
-                                </div>
-                                <!--title end-->
-
-                            </div>
-
-                        </div>
-                        <!--page_title end-->
-
-                        <div class="app-container container-xxl pb-10">
-
-                            <!--tab menu start-->
-                            <nav>
-                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <button class="nav-link hvr-overline-from-center active" type="button" onclick="location.href='trip_expense_chart.html'">總金額</button>
-                                    <button class="nav-link hvr-overline-from-center" type="button" onclick="location.href='trip_expense_chart_01.html'">每日花費</button>
-                                </div>
-                            </nav>
-                            <!--tab menu end-->
-
-                            <div class="row chart_pie">
-                                <div class="col-12 col-md-6 p-5 chart_box">
-                                    <canvas id="chart1"></canvas>
-                                    <ul class="chart_list">
-                                        <li>
-                                            <div class="title"><img src="img/300x300.png">餐飲</div>
-                                            <div class="quantity">3600</div>
-                                        </li>
-                                        <li>
-                                            <div class="title"><img src="img/300x300.png">交通</div>
-                                            <div class="quantity">4500</div>
-                                        </li>
-                                        <li>
-                                            <div class="title"><img src="img/300x300.png">住宿</div>
-                                            <div class="quantity">12000</div>
-                                        </li>
-                                        <li>
-                                            <div class="title"><img src="img/300x300.png">娛樂</div>
-                                            <div class="quantity">2800</div>
-                                        </li>
-                                        <li>
-                                            <div class="title"><img src="img/300x300.png">購物</div>
-                                            <div class="quantity">1500</div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-12 col-md-6 chart_table">
-                                    <!--page_table start-->
-                                    <div class="page_table rounded border border-gray-300">
-                                        <table class="table table-hover table-row-bordered table-row-gray-300 gy-4 table-center">
-                                            <thead>
-                                                <tr class="fw-bold fs-6">
-                                                    <th>分類</th>
-                                                    <th>金額</th>
-                                                    <th>比例</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>餐飲</td>
-                                                    <td>3600</td>
-                                                    <td>14.8%</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>交通</td>
-                                                    <td>4500</td>
-                                                    <td>18.4%</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>住宿</td>
-                                                    <td>12000</td>
-                                                    <td>49.2%</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>娛樂</td>
-                                                    <td>2800</td>
-                                                    <td>11.5%</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>購物</td>
-                                                    <td>1500</td>
-                                                    <td>6.1%</td>
-                                                </tr>
-                                                <tr class="total">
-                                                    <td>總金額</td>
-                                                    <td>24400</td>
-                                                    <td>100%</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <!--page_table end-->
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-
-                    </div>
-
-                    <!--footer start-->
-                    <script>$.include("blocks/footer.html");</script>
-                    <!--footer end-->
-
+                    <h2
+                      class="page-heading d-flex flex-column justify-content-center my-0"
+                    >
+                      台北文青二日遊-費用分析
+                    </h2>
+                  </div>
+                  <!--title end-->
                 </div>
-                <!--main_con end-->
+              </div>
+              <!--page_title end-->
 
+              <div class="app-container container-xxl pb-10">
+                <!--tab menu start-->
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button
+                      class="nav-link hvr-overline-from-center active"
+                      type="button"
+                      onclick="location.href = 'trip_expense_chart.html'"
+                    >
+                      總金額
+                    </button>
+                    <button
+                      class="nav-link hvr-overline-from-center"
+                      type="button"
+                      onclick="location.href = 'trip_expense_chart_01.html'"
+                    >
+                      每日花費
+                    </button>
+                  </div>
+                </nav>
+                <!--tab menu end-->
+
+                <div class="row chart_pie">
+                  <div class="col-12 col-md-6 p-5 chart_box">
+                    <div class="chart_con"><canvas id="chart1"></canvas></div>
+                    <ul class="chart_list">
+                      <li>
+                        <div class="title">
+                          <img src="img/300x300.png" />餐飲
+                        </div>
+                        <div class="quantity">3600</div>
+                      </li>
+                      <li>
+                        <div class="title">
+                          <img src="img/300x300.png" />交通
+                        </div>
+                        <div class="quantity">4500</div>
+                      </li>
+                      <li>
+                        <div class="title">
+                          <img src="img/300x300.png" />住宿
+                        </div>
+                        <div class="quantity">12000</div>
+                      </li>
+                      <li>
+                        <div class="title">
+                          <img src="img/300x300.png" />娛樂
+                        </div>
+                        <div class="quantity">2800</div>
+                      </li>
+                      <li>
+                        <div class="title">
+                          <img src="img/300x300.png" />購物
+                        </div>
+                        <div class="quantity">1500</div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-12 col-md-6 chart_table">
+                    <!--page_table start-->
+                    <div class="page_table rounded border border-gray-300">
+                      <table
+                        class="table table-hover table-row-bordered table-row-gray-300 gy-4 table-center"
+                      >
+                        <thead>
+                          <tr class="fw-bold fs-6">
+                            <th>分類</th>
+                            <th>金額</th>
+                            <th>比例</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>餐飲</td>
+                            <td>3600</td>
+                            <td>14.8%</td>
+                          </tr>
+                          <tr>
+                            <td>交通</td>
+                            <td>4500</td>
+                            <td>18.4%</td>
+                          </tr>
+                          <tr>
+                            <td>住宿</td>
+                            <td>12000</td>
+                            <td>49.2%</td>
+                          </tr>
+                          <tr>
+                            <td>娛樂</td>
+                            <td>2800</td>
+                            <td>11.5%</td>
+                          </tr>
+                          <tr>
+                            <td>購物</td>
+                            <td>1500</td>
+                            <td>6.1%</td>
+                          </tr>
+                          <tr class="total">
+                            <td>總金額</td>
+                            <td>24400</td>
+                            <td>100%</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!--page_table end-->
+                  </div>
+                </div>
+              </div>
+              <!--main content end-->
             </div>
+
+            <!--footer start-->
+            <script>
+              $.include("blocks/footer.html");
+            </script>
+            <!--footer end-->
+          </div>
+          <!--main_con end-->
         </div>
+      </div>
     </div>
 
     <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
-        <i class="ki-duotone ki-arrow-up">
-            <span class="path1"></span>
-            <span class="path2"></span>
-        </i>
+      <i class="ki-duotone ki-arrow-up">
+        <span class="path1"></span>
+        <span class="path2"></span>
+      </i>
     </div>
 
     <script src="js/plugins.bundle.js"></script>
@@ -181,75 +216,109 @@
     <script src="js/main_popover.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        //圓餅圖
-        var chart1 = new Chart('chart1', {
-            type: 'pie',
-            data: {
-                labels:  ["餐飲", "交通", "住宿", "娛樂", "購物"],
-                datasets: [{
-                    data: [3600, 4500, 12000,2800, 1500],
-                    backgroundColor: ["#03658c", "#1588b6", "#6eb7d4", "#ace5f2", "#96cb9d", "#9bbf63", "#799c42", "#788c64", "#3b5f16", "#075814", "#038c33", "#34b561", "#349f8c", "#42c7c5", "#11b8e2", "#36a0c3", "#456a82", "#174b6c","#033351"],
-                    borderWidth: 0,
-                }],
+      //圓餅圖
+      var chart1 = new Chart("chart1", {
+        type: "pie",
+        data: {
+          labels: ["餐飲", "交通", "住宿", "娛樂", "購物"],
+          datasets: [
+            {
+              data: [3600, 4500, 12000, 2800, 1500],
+              backgroundColor: [
+                "#03658c",
+                "#1588b6",
+                "#6eb7d4",
+                "#ace5f2",
+                "#96cb9d",
+                "#9bbf63",
+                "#799c42",
+                "#788c64",
+                "#3b5f16",
+                "#075814",
+                "#038c33",
+                "#34b561",
+                "#349f8c",
+                "#42c7c5",
+                "#11b8e2",
+                "#36a0c3",
+                "#456a82",
+                "#174b6c",
+                "#033351",
+              ],
+              borderWidth: 0,
             },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        display: false,
-                    },
-                    title: {
-                        display: false,
-                        text: 'Chart.js Pie Chart'
-                    }
-                }
-
-
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: "bottom",
+              display: false,
             },
-        });
+            title: {
+              display: false,
+              text: "Chart.js Pie Chart",
+            },
+          },
+        },
+      });
     </script>
 
     <!-- Modal start-->
-    <div class="modal fade" id="trip_Split_modal" tabindex="-1" aria-labelledby="edit_label" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="modal-title" id="edit_label">檢視分帳明細</div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div
+      class="modal fade"
+      id="trip_Split_modal"
+      tabindex="-1"
+      aria-labelledby="edit_label"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title" id="edit_label">檢視分帳明細</div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="page_group w-75px">
+              <div class="item">
+                <div class="title">分帳方式</div>
+                <div class="input_font input-auto">均分</div>
+              </div>
+              <div class="item">
+                <div class="title">總金額</div>
+                <div class="input_font input-auto">3680</div>
+              </div>
+              <div class="item">
+                <div class="title">墊付明細</div>
+                <div class="input_font input-auto">
+                  王小明：2000<br />
+                  林小華：1680
                 </div>
-                <div class="modal-body">
-                    <div class="page_group w-75px">
-                        <div class="item">
-                            <div class="title">分帳方式</div>
-                            <div class="input_font input-auto">均分</div>
-                        </div>
-                        <div class="item">
-                            <div class="title">總金額</div>
-                            <div class="input_font input-auto">3680</div>
-                        </div>
-                        <div class="item">
-                            <div class="title">墊付明細</div>
-                            <div class="input_font input-auto">
-                                王小明：2000<br>
-                                林小華：1680    
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="title">待付明細</div>
-                            <div class="input_font input-auto">
-                                林小華：160 付給 王小明   
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">確認</button>
-                </div>
+              </div>
+              <div class="item">
+                <div class="title">待付明細</div>
+                <div class="input_font input-auto">林小華：160 付給 王小明</div>
+              </div>
             </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              確認
+            </button>
+          </div>
         </div>
+      </div>
     </div>
     <!-- Modal end-->
-
-</body>
+  </body>
 </html>

@@ -1,7 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-hant-tw">
-
-<head>
+  <head>
     <title>TaiPlay後台管理系統</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,182 +10,231 @@
     <link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
     <link href="scss/style.css" rel="stylesheet" type="text/css" />
     <!--font icon-->
-    <link rel="stylesheet" href="css/all.min.css">
-    
+    <link rel="stylesheet" href="css/all.min.css" />
 
     <script src="js/jquery.min.js"></script>
     <script src="js/main.js"></script>
-</head>
+  </head>
 
-<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true"
-    data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true"
-    data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true"
-    data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default body_color_01 left_menu_bg">
-
+  <body
+    id="kt_app_body"
+    data-kt-app-layout="dark-sidebar"
+    data-kt-app-header-fixed="true"
+    data-kt-app-sidebar-enabled="true"
+    data-kt-app-sidebar-fixed="true"
+    data-kt-app-sidebar-hoverable="true"
+    data-kt-app-sidebar-push-header="true"
+    data-kt-app-sidebar-push-toolbar="true"
+    data-kt-app-sidebar-push-footer="true"
+    data-kt-app-toolbar-enabled="true"
+    class="app-default body_color_01 left_menu_bg"
+  >
     <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
-        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+      <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+        <!--header start-->
+        <script>
+          $.include("blocks/header.html");
+        </script>
+        <!--header end-->
 
-            <!--header start-->
-            <script>$.include("blocks/header.html");</script>
-            <!--header end-->
+        <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+          <!--left menu start-->
+          <script>
+            $.include("blocks/left_menu.html");
+          </script>
+          <!--left menu end-->
 
-            <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+          <!--main_con start-->
+          <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+            <div class="d-flex flex-column flex-column-fluid">
+              <!--main content start-->
 
-                <!--left menu start-->
-                <script>$.include("blocks/left_menu.html");</script>
-                <!--left menu end-->
+              <!--page_title star-->
+              <div id="kt_app_toolbar" class="app-toolbar py-3">
+                <div
+                  id="kt_app_toolbar_container"
+                  class="app-container container-xxl d-flex flex-stack"
+                >
+                  <!--title start-->
+                  <div
+                    class="page-title d-flex flex-column justify-content-center flex-wrap me-3"
+                  >
+                    <!--breadcrumb start-->
+                    <ul class="breadcrumb breadcrumb-separatorless my-0 py-1">
+                      <li class="breadcrumb-item">
+                        <a href="index.html">首頁</a>
+                      </li>
+                      <li class="breadcrumb-item">系統管理</li>
+                    </ul>
+                    <!--breadcrumb end-->
 
-                <!--main_con start-->
-                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-                    <div class="d-flex flex-column flex-column-fluid">
+                    <h2
+                      class="page-heading d-flex flex-column justify-content-center my-0"
+                    >
+                      後台介面設定
+                    </h2>
+                  </div>
+                  <!--title end-->
+                </div>
+              </div>
+              <!--page_title end-->
 
-                        <!--page_title star-->
-                        <div id="kt_app_toolbar" class="app-toolbar py-3">
-                            <div id="kt_app_toolbar_container" class="app-container  container-xxl d-flex flex-stack ">
+              <div class="app-container container-xxl pb-10">
+                <!--form_table start-->
+                <div class="form_table rounded border border-gray-300">
+                  <div class="row">
+                    <div class="col-md-2 col-form-label">系統名稱</div>
+                    <div class="col-md-10">
+                      <input
+                        class="form-control"
+                        type="text"
+                        value="TaiPlay後台管理系統"
+                      />
+                    </div>
+                  </div>
 
-                                <!--title start-->
-                                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
+                  <div class="row">
+                    <div class="col-md-2 col-form-label">登入頁說明</div>
+                    <div class="col-md-10 form_font">
+                      <textarea name="" class="ckeditor_classic"></textarea
+                      ><!--使用ckeditor 4 以上版本-->
+                    </div>
+                  </div>
 
-                                    <!--breadcrumb start-->
-                                    <ul class="breadcrumb breadcrumb-separatorless  my-0 py-1">
-                                        <li class="breadcrumb-item">
-                                            <a href="index.html">首頁</a>
-                                        </li>
-                                        <li class="breadcrumb-item">系統管理</li>
-                                    </ul>
-                                    <!--breadcrumb end-->
+                  <div class="row">
+                    <div class="col-md-2 col-form-label">聯絡電話</div>
+                    <div class="col-md-4 form_font">
+                      <input class="form-control" type="text" />
+                    </div>
+                    <div class="col-md-2 col-form-label">聯絡信箱</div>
+                    <div class="col-md-4 form_font">
+                      <input class="form-control" type="text" />
+                    </div>
+                  </div>
 
-                                    <h2 class="page-heading d-flex flex-column justify-content-center my-0">後台介面設定</h2>
+                  <div class="row">
+                    <div class="col-md-2 col-form-label">LOGO</div>
+                    <div class="col-md-10 form_font">
+                      <input type="file" />
+                      <div class="remark">
+                        檔案類型jpeg、jpg、png、gif、svg，建議檔案大小2MB內，尺寸寬度1000px內
+                      </div>
+                    </div>
+                  </div>
 
-                                </div>
-                                <!--title end-->
+                  <div class="row">
+                    <div class="col-md-2 col-form-label">登入頁背景圖</div>
+                    <div class="col-md-10 form_font">
+                      <input type="file" />
+                      <div class="remark">
+                        檔案類型jpeg、jpg、png，建議檔案大小2MB內，尺寸1300*1100px
+                      </div>
+                    </div>
+                  </div>
 
+                  <div class="row d-none">
+                    <div class="col-md-2 col-form-label">後台色系</div>
+                    <div class="col-md-10 form_font">
+                      <label class="form-cheak-label">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="radio_01"
+                          value="body_color_01"
+                          checked
+                        />藍
+                      </label>
+                      <label class="form-cheak-label">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="radio_01"
+                          value="body_color_02"
+                        />綠
+                      </label>
+                      <label class="form-cheak-label">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="radio_01"
+                          value="body_color_03"
+                        />紅
+                      </label>
+                      <label class="form-cheak-label">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="radio_01"
+                          value="body_color_04"
+                        />咖
+                      </label>
+                      <label class="form-cheak-label">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="radio_01"
+                          value="body_color_05"
+                        />橘
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="row d-none">
+                    <div class="col-md-2 col-form-label">通知信樣式</div>
+                    <div class="col-md-10 form_font">
+                      <div class="page_group w-90px">
+                        <label class="item">
+                          <div class="title">LOGO</div>
+                          <div class="input_font input-auto">
+                            <input type="file" />
+                            <div class="remark">
+                              檔案類型jpeg、jpg、png、gif、svg，建議檔案大小2MB內，尺寸寬度1000px內
                             </div>
-
-                        </div>
-                        <!--page_title end-->
-
-                        <div class="app-container container-xxl pb-10">
-
-                            <!--form_table start-->
-                            <div class="form_table rounded border border-gray-300">
-
-                                <div class="row">
-                                    <div class="col-md-2 col-form-label">系統名稱</div>
-                                    <div class="col-md-10">
-                                        <input class="form-control" type="text" value="TaiPlay後台管理系統" >
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-2 col-form-label">登入頁說明</div>
-                                    <div class="col-md-10 form_font">
-                                        <textarea name="" class="ckeditor_classic"></textarea><!--使用ckeditor 4 以上版本-->
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-2 col-form-label">聯絡電話</div>
-                                    <div class="col-md-4 form_font">
-                                        <input class="form-control" type="text">
-                                    </div>
-                                    <div class="col-md-2 col-form-label">聯絡信箱</div>
-                                    <div class="col-md-4 form_font">
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-2 col-form-label">LOGO</div>
-                                    <div class="col-md-10 form_font">
-                                        <input type="file">
-                                        <div class="remark">檔案類型jpeg、jpg、png、gif、svg，建議檔案大小2MB內，尺寸寬度1000px內</div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-2 col-form-label">登入頁背景圖</div>
-                                    <div class="col-md-10 form_font">
-                                        <input type="file">
-                                        <div class="remark">檔案類型jpeg、jpg、png，建議檔案大小2MB內，尺寸1300*1100px</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="row d-none">
-                                    <div class="col-md-2 col-form-label">後台色系</div>
-                                    <div class="col-md-10 form_font">
-                                        <label class="form-cheak-label">
-                                            <input class="form-check-input" type="radio" name="radio_01" value="body_color_01" checked>藍
-                                        </label>
-                                        <label class="form-cheak-label">
-                                            <input class="form-check-input" type="radio" name="radio_01" value="body_color_02">綠
-                                        </label>
-                                        <label class="form-cheak-label">
-                                            <input class="form-check-input" type="radio" name="radio_01" value="body_color_03">紅
-                                        </label>
-                                        <label class="form-cheak-label">
-                                            <input class="form-check-input" type="radio" name="radio_01" value="body_color_04">咖
-                                        </label>
-                                        <label class="form-cheak-label">
-                                            <input class="form-check-input" type="radio" name="radio_01" value="body_color_05">橘
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="row d-none">
-                                    <div class="col-md-2 col-form-label">通知信樣式</div>
-                                    <div class="col-md-10 form_font">
-                                        <div class="page_group w-90px">
-                                            <label class="item">
-                                                <div class="title">LOGO</div>
-                                                <div class="input_font input-auto">
-                                                    <input type="file">
-                                                    <div class="remark">檔案類型jpeg、jpg、png、gif、svg，建議檔案大小2MB內，尺寸寬度1000px內</div>
-                                                </div>
-                                            </label>
-                                            <!-- <label class="item">
+                          </div>
+                        </label>
+                        <!-- <label class="item">
                                                 <div class="title">圖片說明</div>
                                                 <div class="input_font input-auto">
                                                     <input type="text" class="form-control" max="150">
                                                     <div class="remark">限制150字內</div>
                                                 </div>
                                             </label> -->
-                                            <label class="item">
-                                                <div class="title">背景色</div>
-                                                <div class="input_font input-auto">
-                                                    <input type="color" value="#f5f5f5">
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="btn_box pb-0">
-                                <button type="submit" class="btn btn-primary" title="儲存">儲存</button>
-                            </div>
-                            <!--form_table end-->
-                            
-                        </div>
-
+                        <label class="item">
+                          <div class="title">背景色</div>
+                          <div class="input_font input-auto">
+                            <input type="color" value="#f5f5f5" />
+                          </div>
+                        </label>
+                      </div>
                     </div>
-
-                    <!--footer start-->
-                    <script>$.include("blocks/footer.html");</script>
-                    <!--footer end-->
-
+                  </div>
                 </div>
-                <!--main_con end-->
-
+                <div class="btn_box pb-0">
+                  <button type="submit" class="btn btn-primary" title="儲存">
+                    儲存
+                  </button>
+                </div>
+                <!--form_table end-->
+              </div>
+              <!--main content end-->
             </div>
+
+            <!--footer start-->
+            <script>
+              $.include("blocks/footer.html");
+            </script>
+            <!--footer end-->
+          </div>
+          <!--main_con end-->
         </div>
+      </div>
     </div>
 
     <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
-        <i class="ki-duotone ki-arrow-up">
-            <span class="path1"></span>
-            <span class="path2"></span>
-        </i>
+      <i class="ki-duotone ki-arrow-up">
+        <span class="path1"></span>
+        <span class="path2"></span>
+      </i>
     </div>
 
     <script src="js/plugins.bundle.js"></script>
@@ -196,44 +244,46 @@
     <!--ckeditor start-->
     <script src="js/ckeditor/ckeditor-classic.bundle.js"></script>
     <script>
-    document.querySelectorAll('.ckeditor_classic').forEach(textarea => {
-        ClassicEditor
-            .create(textarea)
-            .then(editor => {
-                console.log('Editor initialized for:', textarea);
-            })
-            .catch(error => {
-                console.error('Error initializing editor:', error);
-            });
-    });
+      document.querySelectorAll(".ckeditor_classic").forEach((textarea) => {
+        ClassicEditor.create(textarea)
+          .then((editor) => {
+            console.log("Editor initialized for:", textarea);
+          })
+          .catch((error) => {
+            console.error("Error initializing editor:", error);
+          });
+      });
     </script>
     <!--ckeditor end-->
 
     <!--後台色系切換變色效果 start-->
     <script>
-    document.querySelectorAll('input[name="radio_01"]').forEach(radio => {
-        radio.addEventListener('change', function() {
-            // 獲取 body 元素
-            const body = document.body;
+      document.querySelectorAll('input[name="radio_01"]').forEach((radio) => {
+        radio.addEventListener("change", function () {
+          // 獲取 body 元素
+          const body = document.body;
 
-            // 獲取所有現有的 class
-            const classList = Array.from(body.classList);
+          // 獲取所有現有的 class
+          const classList = Array.from(body.classList);
 
-            // 過濾掉所有以 'body_color_' 開頭的 class
-            const filteredClassList = classList.filter(className => !className.startsWith('body_color_'));
+          // 過濾掉所有以 'body_color_' 開頭的 class
+          const filteredClassList = classList.filter(
+            (className) => !className.startsWith("body_color_"),
+          );
 
-            // 清空 body 的所有 class
-            body.className = '';
+          // 清空 body 的所有 class
+          body.className = "";
 
-            // 重新添加未被過濾的 class
-            filteredClassList.forEach(className => body.classList.add(className));
+          // 重新添加未被過濾的 class
+          filteredClassList.forEach((className) =>
+            body.classList.add(className),
+          );
 
-            // 添加選中 radio 的 value 作為新的 class
-            body.classList.add(this.value);
+          // 添加選中 radio 的 value 作為新的 class
+          body.classList.add(this.value);
         });
-    });
+      });
     </script>
     <!--後台色系切換變色效果 end-->
-    
-</body>
+  </body>
 </html>

@@ -1,7 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-hant-tw">
-
-<head>
+  <head>
     <title>TaiPlay後台管理系統</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,148 +10,197 @@
     <link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
     <link href="scss/style.css" rel="stylesheet" type="text/css" />
     <!--font icon-->
-    <link rel="stylesheet" href="css/all.min.css">
-    
+    <link rel="stylesheet" href="css/all.min.css" />
 
     <script src="js/jquery.min.js"></script>
     <script src="js/main.js"></script>
-</head>
+  </head>
 
-<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true"
-    data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true"
-    data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true"
-    data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default body_color_01 left_menu_bg">
-
+  <body
+    id="kt_app_body"
+    data-kt-app-layout="dark-sidebar"
+    data-kt-app-header-fixed="true"
+    data-kt-app-sidebar-enabled="true"
+    data-kt-app-sidebar-fixed="true"
+    data-kt-app-sidebar-hoverable="true"
+    data-kt-app-sidebar-push-header="true"
+    data-kt-app-sidebar-push-toolbar="true"
+    data-kt-app-sidebar-push-footer="true"
+    data-kt-app-toolbar-enabled="true"
+    class="app-default body_color_01 left_menu_bg"
+  >
     <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
-        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+      <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+        <!--header start-->
+        <script>
+          $.include("blocks/header.html");
+        </script>
+        <!--header end-->
 
-            <!--header start-->
-            <script>$.include("blocks/header.html");</script>
-            <!--header end-->
+        <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+          <!--left menu start-->
+          <script>
+            $.include("blocks/left_menu.html");
+          </script>
+          <!--left menu end-->
 
-            <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+          <!--main_con start-->
+          <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+            <div class="d-flex flex-column flex-column-fluid">
+              <!--main content start-->
 
-                <!--left menu start-->
-                <script>$.include("blocks/left_menu.html");</script>
-                <!--left menu end-->
+              <!--page_title star-->
+              <div id="kt_app_toolbar" class="app-toolbar py-3">
+                <div
+                  id="kt_app_toolbar_container"
+                  class="app-container container-xxl d-flex flex-stack"
+                >
+                  <!--title start-->
+                  <div
+                    class="page-title d-flex flex-column justify-content-center flex-wrap me-3"
+                  >
+                    <!--breadcrumb start-->
+                    <ul class="breadcrumb breadcrumb-separatorless my-0 py-1">
+                      <li class="breadcrumb-item">
+                        <a href="index.html">首頁</a>
+                      </li>
+                      <li class="breadcrumb-item">系統管理</li>
+                      <li class="breadcrumb-item">
+                        <a href="system_competence.html">權限管理</a>
+                      </li>
+                    </ul>
+                    <!--breadcrumb end-->
 
-                <!--main_con start-->
-                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-                    <div class="d-flex flex-column flex-column-fluid">
-
-                        <!--page_title star-->
-                        <div id="kt_app_toolbar" class="app-toolbar py-3">
-                            <div id="kt_app_toolbar_container" class="app-container  container-xxl d-flex flex-stack ">
-
-                                <!--title start-->
-                                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
-
-                                    <!--breadcrumb start-->
-                                    <ul class="breadcrumb breadcrumb-separatorless  my-0 py-1">
-                                        <li class="breadcrumb-item">
-                                            <a href="index.html">首頁</a>
-                                        </li>
-                                        <li class="breadcrumb-item">系統管理</li>
-                                        <li class="breadcrumb-item"><a href="system_competence.html">權限管理</a></li>
-                                    </ul>
-                                    <!--breadcrumb end-->
-
-                                    <h2 class="page-heading d-flex flex-column justify-content-center my-0">權限管理</h2>
-
-                                </div>
-                                <!--title end-->
-
-                            </div>
-
-                        </div>
-                        <!--page_title end-->
-
-                        <div class="app-container container-xxl pb-10">
-
-                            <!--form_table start-->
-                            <div class="form_table rounded border border-gray-300">
-
-                                <div class="row">
-                                    <div class="col-md-2 col-form-label required">群組</div>
-                                    <div class="col-md-4 form_font">
-                                        <select class="form-control w-auto form-select">
-                                            <option value="" disabled selected hidden>請選擇</option>
-                                            <option value="#">總管理者</option>
-                                            <option value="#">管理者</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-2 col-form-label required">姓名</div>
-                                    <div class="col-md-4 form_font">
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-2 col-form-label required">帳號</div>
-                                    <div class="col-md-4 form_font">
-                                        <input class="form-control" type="text">
-                                    </div>
-                                    <div class="col-md-2 col-form-label required">密碼</div>
-                                    <div class="col-md-4 form_font show_hide_password">
-                                        <input type="password" placeholder="密碼" name="password" id="floatingInput"  class="form-control" />
-                                        <i class="ki-duotone ki-eye-slash fs-2 password_eye" aria-hidden="true">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                            <span class="path3"></span>
-                                            <span class="path4"></span>
-                                        </i>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-2 col-form-label">使用期限</div>
-                                    <div class="col-md-10 form_font">
-                                        <label class="form-cheak-label">
-                                            <input class="form-check-input" type="radio" name="toggle_item_01" data-toggle="toggle_01" onclick="toggleChoice('toggle_item_01');" checked="">無限期
-                                        </label>
-                                        <label class="form-cheak-label">
-                                            <input class="form-check-input" type="radio" name="toggle_item_01" data-toggle="toggle_02" onclick="toggleChoice('toggle_item_01');">有
-                                        </label>
-                                        <span class="d-inline-block">
-                                            <div class="toggle_02" style="display: none;">
-                                                <script>$.include("blocks/input_date.html");</script>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="btn_box pb-0">
-                                <button type="submit" class="btn btn-secondary" title="回上一頁" onclick="history.go(-1);return false;">回上一頁</button>
-                                <button type="submit" class="btn btn-primary" title="儲存">儲存</button>
-                            </div>
-                            <!--form_table end-->
-                            
-                        </div>
-
-                    </div>
-
-                    <!--footer start-->
-                    <script>$.include("blocks/footer.html");</script>
-                    <!--footer end-->
-
+                    <h2
+                      class="page-heading d-flex flex-column justify-content-center my-0"
+                    >
+                      權限管理
+                    </h2>
+                  </div>
+                  <!--title end-->
                 </div>
-                <!--main_con end-->
+              </div>
+              <!--page_title end-->
 
+              <div class="app-container container-xxl pb-10">
+                <!--form_table start-->
+                <div class="form_table rounded border border-gray-300">
+                  <div class="row">
+                    <div class="col-md-2 col-form-label required">群組</div>
+                    <div class="col-md-4 form_font">
+                      <select class="form-control w-auto form-select">
+                        <option value="" disabled selected hidden>
+                          請選擇
+                        </option>
+                        <option value="#">總管理者</option>
+                        <option value="#">管理者</option>
+                      </select>
+                    </div>
+                    <div class="col-md-2 col-form-label required">姓名</div>
+                    <div class="col-md-4 form_font">
+                      <input class="form-control" type="text" />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-2 col-form-label required">帳號</div>
+                    <div class="col-md-4 form_font">
+                      <input class="form-control" type="text" />
+                    </div>
+                    <div class="col-md-2 col-form-label required">密碼</div>
+                    <div class="col-md-4 form_font show_hide_password">
+                      <input
+                        type="password"
+                        placeholder="密碼"
+                        name="password"
+                        id="floatingInput"
+                        class="form-control"
+                      />
+                      <i
+                        class="ki-duotone ki-eye-slash fs-2 password_eye"
+                        aria-hidden="true"
+                      >
+                        <span class="path1"></span>
+                        <span class="path2"></span>
+                        <span class="path3"></span>
+                        <span class="path4"></span>
+                      </i>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-2 col-form-label">使用期限</div>
+                    <div class="col-md-10 form_font">
+                      <label class="form-cheak-label">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="toggle_item_01"
+                          data-toggle="toggle_01"
+                          onclick="toggleChoice('toggle_item_01')"
+                          checked=""
+                        />無限期
+                      </label>
+                      <label class="form-cheak-label">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="toggle_item_01"
+                          data-toggle="toggle_02"
+                          onclick="toggleChoice('toggle_item_01')"
+                        />有
+                      </label>
+                      <span class="d-inline-block">
+                        <div class="toggle_02" style="display: none">
+                          <script>
+                            $.include("blocks/input_date.html");
+                          </script>
+                        </div>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="btn_box pb-0">
+                  <button
+                    type="submit"
+                    class="btn btn-secondary"
+                    title="回上一頁"
+                    onclick="
+                      history.go(-1);
+                      return false;
+                    "
+                  >
+                    回上一頁
+                  </button>
+                  <button type="submit" class="btn btn-primary" title="儲存">
+                    儲存
+                  </button>
+                </div>
+                <!--form_table end-->
+              </div>
+              <!--main content end-->
             </div>
+
+            <!--footer start-->
+            <script>
+              $.include("blocks/footer.html");
+            </script>
+            <!--footer end-->
+          </div>
+          <!--main_con end-->
         </div>
+      </div>
     </div>
 
     <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
-        <i class="ki-duotone ki-arrow-up">
-            <span class="path1"></span>
-            <span class="path2"></span>
-        </i>
+      <i class="ki-duotone ki-arrow-up">
+        <span class="path1"></span>
+        <span class="path2"></span>
+      </i>
     </div>
 
     <script src="js/plugins.bundle.js"></script>
     <script src="js/scripts.bundle.js"></script>
     <script src="js/datatables.bundle.js"></script>
-
-</body>
+  </body>
 </html>

@@ -1,7 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-hant-tw">
-
-<head>
+  <head>
     <title>TaiPlay後台管理系統</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,89 +10,105 @@
     <link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
     <link href="scss/style.css" rel="stylesheet" type="text/css" />
     <!--font icon-->
-    <link rel="stylesheet" href="css/all.min.css">
-    
+    <link rel="stylesheet" href="css/all.min.css" />
 
     <script src="js/jquery.min.js"></script>
     <script src="js/main.js"></script>
-</head>
+  </head>
 
-<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true"
-    data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true"
-    data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true"
-    data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default body_color_01 left_menu_bg">
-
+  <body
+    id="kt_app_body"
+    data-kt-app-layout="dark-sidebar"
+    data-kt-app-header-fixed="true"
+    data-kt-app-sidebar-enabled="true"
+    data-kt-app-sidebar-fixed="true"
+    data-kt-app-sidebar-hoverable="true"
+    data-kt-app-sidebar-push-header="true"
+    data-kt-app-sidebar-push-toolbar="true"
+    data-kt-app-sidebar-push-footer="true"
+    data-kt-app-toolbar-enabled="true"
+    class="app-default body_color_01 left_menu_bg"
+  >
     <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
-        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+      <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+        <!--header start-->
+        <script>
+          $.include("blocks/header.html");
+        </script>
+        <!--header end-->
 
-            <!--header start-->
-            <script>$.include("blocks/header.html");</script>
-            <!--header end-->
+        <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+          <!--left menu start-->
+          <script>
+            $.include("blocks/left_menu.html");
+          </script>
+          <!--left menu end-->
 
-            <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+          <!--main_con start-->
+          <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+            <div class="d-flex flex-column flex-column-fluid">
+              <!--main content start-->
 
-                <!--left menu start-->
-                <script>$.include("blocks/left_menu.html");</script>
-                <!--left menu end-->
+              <!--page_title star-->
+              <div id="kt_app_toolbar" class="app-toolbar py-3">
+                <div
+                  id="kt_app_toolbar_container"
+                  class="app-container container-xxl d-flex flex-stack"
+                >
+                  <!--title start-->
+                  <div
+                    class="page-title d-flex flex-column justify-content-center flex-wrap me-3"
+                  >
+                    <!--breadcrumb start-->
+                    <ul class="breadcrumb breadcrumb-separatorless my-0 py-1">
+                      <li class="breadcrumb-item">
+                        <a href="index.html">首頁</a>
+                      </li>
+                      <li class="breadcrumb-item">系統管理</li>
+                      <li class="breadcrumb-item">
+                        <a href="system_competence.html">權限管理</a>
+                      </li>
+                    </ul>
+                    <!--breadcrumb end-->
 
-                <!--main_con start-->
-                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-                    <div class="d-flex flex-column flex-column-fluid">
+                    <h2
+                      class="page-heading d-flex flex-column justify-content-center my-0"
+                    >
+                      權限群組管理
+                    </h2>
+                  </div>
+                  <!--title end-->
+                </div>
+              </div>
+              <!--page_title end-->
 
-                        <!--page_title star-->
-                        <div id="kt_app_toolbar" class="app-toolbar py-3">
-                            <div id="kt_app_toolbar_container" class="app-container  container-xxl d-flex flex-stack ">
+              <div class="app-container container-xxl pb-10">
+                <!--form_table start-->
+                <div class="form_table rounded border border-gray-300">
+                  <div class="row">
+                    <div class="col-md-2 col-form-label required">群組代碼</div>
+                    <div class="col-md-10 form_font">
+                      <input class="form-control" type="text" />
+                    </div>
+                  </div>
 
-                                <!--title start-->
-                                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
+                  <div class="row">
+                    <div class="col-md-2 col-form-label required">
+                      權限群組名稱
+                    </div>
+                    <div class="col-md-10 form_font">
+                      <input class="form-control" type="text" />
+                    </div>
+                  </div>
 
-                                    <!--breadcrumb start-->
-                                    <ul class="breadcrumb breadcrumb-separatorless  my-0 py-1">
-                                        <li class="breadcrumb-item">
-                                            <a href="index.html">首頁</a>
-                                        </li>
-                                        <li class="breadcrumb-item">系統管理</li>
-                                        <li class="breadcrumb-item"><a href="system_competence.html">權限管理</a></li>
-                                    </ul>
-                                    <!--breadcrumb end-->
+                  <div class="row">
+                    <div class="col-md-2 col-form-label required">新增權限</div>
+                    <div class="col-md-10 form_font">
+                      <input type="checkbox" class="form-check-input" />
+                    </div>
+                  </div>
 
-                                    <h2 class="page-heading d-flex flex-column justify-content-center my-0">權限群組管理</h2>
-
-                                </div>
-                                <!--title end-->
-
-                            </div>
-
-                        </div>
-                        <!--page_title end-->
-
-                        <div class="app-container container-xxl pb-10">
-
-                            <!--form_table start-->
-                            <div class="form_table rounded border border-gray-300">
-
-                                <div class="row">
-                                    <div class="col-md-2 col-form-label required">群組代碼</div>
-                                    <div class="col-md-10 form_font">
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col-md-2 col-form-label required">權限群組名稱</div>
-                                    <div class="col-md-10 form_font">
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-2 col-form-label required">新增權限</div>
-                                    <div class="col-md-10 form_font">
-                                        <input type="checkbox" class="form-check-input">
-                                    </div>
-                                </div>
-
-                                <!-- <div class="row">
+                  <!-- <div class="row">
                                     <div class="col-md-2 col-form-label required">語系</div>
                                     <div class="col-md-10 form_font">
                                         <label class="form-cheak-label">
@@ -104,948 +119,1614 @@
                                         </label>
                                     </div>
                                 </div> -->
-                                
 
-                                <div class="row" style="display: none;">
-                                    <div class="col-md-2 col-form-label">管理選項</div>
-                                    <div class="col-md-10 form_font">
+                  <div class="row" style="display: none">
+                    <div class="col-md-2 col-form-label">管理選項</div>
+                    <div class="col-md-10 form_font">
+                      <div class="competence_title">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                        />系統管理設定
+                      </div>
+                      <table
+                        width="100%"
+                        cellspacing="0"
+                        cellpadding="0"
+                        class="competence_table mb-5"
+                      >
+                        <tbody>
+                          <tr>
+                            <td class="class_01">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />系統管理
+                              </label>
+                            </td>
 
-                                        <div class="competence_title">
-                                            <input type="checkbox" class="form-check-input">系統管理設定
-                                        </div>
-                                        <table width="100%" cellspacing="0" cellpadding="0" class="competence_table mb-5">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="class_01">
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">系統管理
-                                                        </label>
-                                                    </td>
+                            <td class="class_02">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />雷普功能設定
+                              </label>
 
-                                                    <td class="class_02">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />驗證管理
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">雷普功能設定
-                                                        </label>
-                                                        
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">驗證管理
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />後台介面設定
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">後台介面設定
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />權限管理
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">權限管理
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />IP限制管理
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">IP限制管理
-                                                        </label>
-
-                                                        <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                              <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
                                                             <input type="checkbox" class="form-check-input">驗證綁定網域
                                                         </label> -->
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">審核管理
-                                                        </label>
-                                                        
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">管理紀錄查詢
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />審核管理
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">多國語系設定
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />管理紀錄查詢
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">郵件主機設定
-                                                        </label>
-                                                                                                                        
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="class_01">
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">網站選單
-                                                        </label>
-                                                    </td>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />多國語系設定
+                              </label>
 
-                                                    <td class="class_02">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />郵件主機設定
+                              </label>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="class_01">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />網站選單
+                              </label>
+                            </td>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">主要選單
-                                                        </label>
+                            <td class="class_02">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />主要選單
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">上方選單
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />上方選單
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">下方選單
-                                                        </label>
-                                                                                                                        
-                                                    </td>
-                                                </tr>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />下方選單
+                              </label>
+                            </td>
+                          </tr>
 
-                                                <tr>
-                                                    <td class="class_01">
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">版面設定
-                                                        </label>
-                                                    </td>
+                          <tr>
+                            <td class="class_01">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />版面設定
+                              </label>
+                            </td>
 
-                                                    <td class="class_02">
+                            <td class="class_02">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />網站版面資訊設定
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">網站版面資訊設定
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />語系通用文字設定
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">語系通用文字設定
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />入口首頁配置
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">入口首頁配置
-                                                        </label>
-
-                                                        <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                              <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
                                                             <input type="checkbox" class="form-check-input">網站版型管理
                                                         </label> -->
-                                                                                                                        
-                                                    </td>
-                                                </tr>
+                            </td>
+                          </tr>
 
-                                                <tr>
-                                                    <td class="class_01">
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">模組元件
-                                                        </label>
-                                                    </td>
+                          <tr>
+                            <td class="class_01">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />模組元件
+                              </label>
+                            </td>
 
-                                                    <td class="class_02">
+                            <td class="class_02">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />SEO優化設定
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">SEO優化設定
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />選單程式模組管理
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">選單程式模組管理
-                                                        </label>
-
-                                                        <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                              <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
                                                             <input type="checkbox" class="form-check-input">電子報管理
                                                         </label> -->
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">全文檢索管理
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />全文檢索管理
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">流量分析
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />流量分析
+                              </label>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
 
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                      <div class="competence_title">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                        />主要選單
+                      </div>
+                      <div class="table-responsive">
+                        <table
+                          width="100%"
+                          cellspacing="0"
+                          cellpadding="0"
+                          class="competence_table mb-5"
+                        >
+                          <tbody>
+                            <tr>
+                              <td class="class_01" rowspan="4">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />關於我們
+                                </label>
+                              </td>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />設立宗旨
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
+                            <tr>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />組織架構
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
+                            <tr>
+                              <td class="class_02" rowspan="2">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />首長介紹
+                                </label>
+                              </td>
+                              <td class="class_03">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />董事長
+                                </label>
+                              </td>
+                              <td class="class_04"></td>
+                            </tr>
 
-                                        <div class="competence_title">
-                                            <input type="checkbox" class="form-check-input">主要選單
-                                        </div>
-                                        <div class="table-responsive">
-                                            <table width="100%" cellspacing="0" cellpadding="0" class="competence_table mb-5">
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="class_01" rowspan="4">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">關於我們
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">設立宗旨
-                                                            </label>                                                        
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">組織架構
-                                                            </label>                                                    
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_02" rowspan="2">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">首長介紹
-                                                            </label>                                                       
-                                                        </td>
-                                                        <td class="class_03">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">董事長
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
+                            <tr>
+                              <td class="class_03">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />歷任董事長
+                                </label>
+                              </td>
+                              <td class="class_04"></td>
+                            </tr>
 
-                                                    <tr>
-                                                        <td class="class_03">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">歷任董事長
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
+                            <tr>
+                              <td class="class_01" rowspan="3">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />最新消息
+                                </label>
+                              </td>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />公告訊息
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
 
-                                                    <tr>
-                                                        <td class="class_01" rowspan="3">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">最新消息
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">公告訊息
-                                                            </label>                                                      
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
+                            <tr>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />活動訊息
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
 
-                                                    <tr>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">活動訊息
-                                                            </label>                                                      
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
+                            <tr>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />人才招募
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
+                            <tr>
+                              <td class="class_01" rowspan="4">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />First floor
+                                </label>
+                              </td>
+                              <td class="class_02" rowspan="3">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Second floor
+                                </label>
+                              </td>
+                              <td class="class_03">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Third floor
+                                </label>
+                              </td>
+                              <td class="class_04"></td>
+                            </tr>
+                            <tr>
+                              <td class="class_03" rowspan="2">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Third floor
+                                </label>
+                              </td>
+                              <td class="class_04">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Fourth floor
+                                </label>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="class_04">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Fourth floor
+                                </label>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Second floor
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
 
-                                                    <tr>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">人才招募
-                                                            </label>                                                     
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_01" rowspan="4">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">First floor
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_02" rowspan="3">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Second floor
-                                                            </label>                                                       
-                                                        </td>
-                                                        <td class="class_03">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Third floor
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_03" rowspan="2">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Third floor
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_04">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Fourth floor
-                                                            </label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_04">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Fourth floor
-                                                            </label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Second floor
-                                                            </label>                                                        
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
+                            <tr>
+                              <td class="class_01">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />First floor
+                                </label>
+                              </td>
+                              <td class="class_02"></td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--form_table end-->
 
-                                                    <tr>
-                                                        <td class="class_01">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">First floor
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_02"></td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                <!--tab menu start-->
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button
+                      class="nav-link hvr-overline-from-center active"
+                      id="tab_page_01"
+                      data-bs-toggle="tab"
+                      data-bs-target="#page_01"
+                      type="button"
+                      role="tab"
+                      aria-controls="page_01"
+                      aria-selected="true"
+                    >
+                      系統、選單管理
+                    </button>
+                    <button
+                      class="nav-link hvr-overline-from-center"
+                      id="tab_page_02"
+                      data-bs-toggle="tab"
+                      data-bs-target="#page_02"
+                      type="button"
+                      role="tab"
+                      aria-controls="page_02"
+                      aria-selected="false"
+                    >
+                      模組管理
+                    </button>
+                  </div>
+                </nav>
+                <!--tab menu end-->
 
-                                    </div>
-                                </div>
+                <!--tab con start-->
+                <div class="tab-content" id="nav-tabContent">
+                  <div
+                    class="tab-pane fade show active"
+                    id="page_01"
+                    role="tabpanel"
+                    aria-labelledby="tab_page_01"
+                  >
+                    <div class="toggle_01">
+                      <div class="competence_title">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                        />系統管理設定
+                      </div>
+                      <table
+                        width="100%"
+                        cellspacing="0"
+                        cellpadding="0"
+                        class="competence_table mb-5"
+                      >
+                        <tbody>
+                          <tr>
+                            <td class="class_01">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />系統管理
+                              </label>
+                            </td>
 
-                            </div>
-                            <!--form_table end-->
+                            <td class="class_02">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />雷普功能設定
+                              </label>
 
-                            <!--tab menu start-->
-                            <nav>
-                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <button class="nav-link hvr-overline-from-center active" id="tab_page_01" data-bs-toggle="tab" data-bs-target="#page_01" type="button" role="tab" aria-controls="page_01" aria-selected="true">系統、選單管理</button>
-                                    <button class="nav-link hvr-overline-from-center" id="tab_page_02" data-bs-toggle="tab" data-bs-target="#page_02" type="button" role="tab" aria-controls="page_02" aria-selected="false">模組管理</button>
-                                </div>
-                            </nav>
-                            <!--tab menu end-->
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />驗證管理
+                              </label>
 
-                            <!--tab con start-->
-                            <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="page_01" role="tabpanel" aria-labelledby="tab_page_01">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />後台介面設定
+                              </label>
 
-                                    <div class="toggle_01">
-                                        <div class="competence_title">
-                                            <input type="checkbox" class="form-check-input">系統管理設定
-                                        </div>
-                                        <table width="100%" cellspacing="0" cellpadding="0" class="competence_table mb-5">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="class_01">
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">系統管理
-                                                        </label>
-                                                    </td>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />權限管理
+                              </label>
 
-                                                    <td class="class_02">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />IP限制管理
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">雷普功能設定
-                                                        </label>
-                                                        
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">驗證管理
-                                                        </label>
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">後台介面設定
-                                                        </label>
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">權限管理
-                                                        </label>
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">IP限制管理
-                                                        </label>
-
-                                                        <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                              <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
                                                             <input type="checkbox" class="form-check-input">驗證綁定網域
                                                         </label> -->
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">審核管理
-                                                        </label>
-                                                        
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">管理紀錄查詢
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />審核管理
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">多國語系設定
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />管理紀錄查詢
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">郵件主機設定
-                                                        </label>
-                                                                                                                        
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="class_01">
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">網站選單
-                                                        </label>
-                                                    </td>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />多國語系設定
+                              </label>
 
-                                                    <td class="class_02">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />郵件主機設定
+                              </label>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="class_01">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />網站選單
+                              </label>
+                            </td>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">主要選單
-                                                        </label>
+                            <td class="class_02">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />主要選單
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">上方選單
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />上方選單
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">下方選單
-                                                        </label>
-                                                                                                                        
-                                                    </td>
-                                                </tr>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />下方選單
+                              </label>
+                            </td>
+                          </tr>
 
-                                                <tr>
-                                                    <td class="class_01">
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">版面設定
-                                                        </label>
-                                                    </td>
+                          <tr>
+                            <td class="class_01">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />版面設定
+                              </label>
+                            </td>
 
-                                                    <td class="class_02">
+                            <td class="class_02">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />網站版面資訊設定
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">網站版面資訊設定
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />語系通用文字設定
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">語系通用文字設定
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />入口首頁配置
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">入口首頁配置
-                                                        </label>
-
-                                                        <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                              <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
                                                             <input type="checkbox" class="form-check-input">網站版型管理
                                                         </label> -->
-                                                                                                                        
-                                                    </td>
-                                                </tr>
+                            </td>
+                          </tr>
 
-                                                <tr>
-                                                    <td class="class_01">
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">模組元件
-                                                        </label>
-                                                    </td>
+                          <tr>
+                            <td class="class_01">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />模組元件
+                              </label>
+                            </td>
 
-                                                    <td class="class_02">
+                            <td class="class_02">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />SEO優化設定
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">SEO優化設定
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />選單程式模組管理
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">選單程式模組管理
-                                                        </label>
-
-                                                        <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                              <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
                                                             <input type="checkbox" class="form-check-input">電子報管理
                                                         </label> -->
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">全文檢索管理
-                                                        </label>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />全文檢索管理
+                              </label>
 
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">流量分析
-                                                        </label>
-                                                                                                                
-                                                    </td>
-                                                </tr>
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />流量分析
+                              </label>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
 
+                      <div class="competence_title">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                        />主要選單
+                      </div>
+                      <div class="table-responsive">
+                        <table
+                          width="100%"
+                          cellspacing="0"
+                          cellpadding="0"
+                          class="competence_table mb-5"
+                        >
+                          <tbody>
+                            <tr>
+                              <td class="class_01" rowspan="4">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />關於我們
+                                </label>
+                              </td>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />設立宗旨
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
+                            <tr>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />組織架構
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
+                            <tr>
+                              <td class="class_02" rowspan="2">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />首長介紹
+                                </label>
+                              </td>
+                              <td class="class_03">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />董事長
+                                </label>
+                              </td>
+                              <td class="class_04"></td>
+                            </tr>
 
-                                            </tbody>
-                                        </table>
+                            <tr>
+                              <td class="class_03">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />歷任董事長
+                                </label>
+                              </td>
+                              <td class="class_04"></td>
+                            </tr>
 
-                                        <div class="competence_title">
-                                            <input type="checkbox" class="form-check-input">主要選單
-                                        </div>
-                                        <div class="table-responsive">
-                                            <table width="100%" cellspacing="0" cellpadding="0" class="competence_table mb-5">
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="class_01" rowspan="4">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">關於我們
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">設立宗旨
-                                                            </label>                                                        
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">組織架構
-                                                            </label>                                                    
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_02" rowspan="2">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">首長介紹
-                                                            </label>                                                       
-                                                        </td>
-                                                        <td class="class_03">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">董事長
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
+                            <tr>
+                              <td class="class_01" rowspan="3">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />最新消息
+                                </label>
+                              </td>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />公告訊息
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
 
-                                                    <tr>
-                                                        <td class="class_03">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">歷任董事長
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
+                            <tr>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />活動訊息
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
 
-                                                    <tr>
-                                                        <td class="class_01" rowspan="3">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">最新消息
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">公告訊息
-                                                            </label>                                                      
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
+                            <tr>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />人才招募
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
+                            <tr>
+                              <td class="class_01" rowspan="4">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />第一層
+                                </label>
+                              </td>
+                              <td class="class_02" rowspan="3">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />第二層
+                                </label>
+                              </td>
+                              <td class="class_03">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />第三層
+                                </label>
+                              </td>
+                              <td class="class_04"></td>
+                            </tr>
+                            <tr>
+                              <td class="class_03" rowspan="2">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />第三層
+                                </label>
+                              </td>
+                              <td class="class_04">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />第四層
+                                </label>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="class_04">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />第四層
+                                </label>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />第二層
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
 
-                                                    <tr>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">活動訊息
-                                                            </label>                                                      
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">人才招募
-                                                            </label>                                                     
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_01" rowspan="4">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">第一層
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_02" rowspan="3">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">第二層
-                                                            </label>                                                       
-                                                        </td>
-                                                        <td class="class_03">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">第三層
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_03" rowspan="2">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">第三層
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_04">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">第四層
-                                                            </label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_04">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">第四層
-                                                            </label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">第二層
-                                                            </label>                                                        
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td class="class_01">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">第一層
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_02"></td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                    <div class="toggle_02" style="display: none;">
-                                        <div class="competence_title">
-                                            <input type="checkbox" class="form-check-input">系統管理設定
-                                        </div>
-                                        <table width="100%" cellspacing="0" cellpadding="0" class="competence_table mb-5">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="class_01">
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">系統管理
-                                                        </label>
-                                                    </td>
-
-                                                    <td class="class_02">
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">雷普功能設定
-                                                        </label>
-                                                        
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">驗證管理
-                                                        </label>
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">後台介面設定
-                                                        </label>
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">權限管理
-                                                        </label>
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">IP限制管理
-                                                        </label>
-
-                                                        <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">驗證綁定網域
-                                                        </label> -->
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">審核管理
-                                                        </label>
-                                                        
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">管理紀錄查詢
-                                                        </label>
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">多國語系設定
-                                                        </label>
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">郵件主機設定
-                                                        </label>
-                                                                                                                        
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="class_01">
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">網站選單
-                                                        </label>
-                                                    </td>
-
-                                                    <td class="class_02">
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">主要選單
-                                                        </label>
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">上方選單
-                                                        </label>
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">下方選單
-                                                        </label>
-                                                                                                                        
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="class_01">
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">版面設定
-                                                        </label>
-                                                    </td>
-
-                                                    <td class="class_02">
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">網站版面資訊設定
-                                                        </label>
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">語系通用文字設定
-                                                        </label>
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">入口首頁配置
-                                                        </label>
-
-                                                        <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">網站版型管理
-                                                        </label> -->
-                                                                                                                        
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="class_01">
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">模組元件
-                                                        </label>
-                                                    </td>
-
-                                                    <td class="class_02">
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">SEO優化設定
-                                                        </label>
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">選單程式模組管理
-                                                        </label>
-
-                                                        <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">電子報管理
-                                                        </label> -->
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">全文檢索管理
-                                                        </label>
-
-                                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                            <input type="checkbox" class="form-check-input">流量分析
-                                                        </label>
-                                                                                                                
-                                                    </td>
-                                                </tr>
-
-
-                                            </tbody>
-                                        </table>
-
-                                        <div class="competence_title">
-                                            <input type="checkbox" class="form-check-input">主要選單
-                                        </div>
-                                        <div class="table-responsive">
-                                            <table width="100%" cellspacing="0" cellpadding="0" class="competence_table mb-5">
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="class_01" rowspan="4">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">About
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Purpose
-                                                            </label>                                                        
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Organize
-                                                            </label>                                                    
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_02" rowspan="2">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Chief Introduction
-                                                            </label>                                                       
-                                                        </td>
-                                                        <td class="class_03">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Chairman
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td class="class_03">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Former Chairman
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td class="class_01" rowspan="3">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">News
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Announcement
-                                                            </label>                                                      
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Activity
-                                                            </label>                                                      
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Recruitment
-                                                            </label>                                                     
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_01" rowspan="4">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">First floor
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_02" rowspan="3">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Second floor
-                                                            </label>                                                       
-                                                        </td>
-                                                        <td class="class_03">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Third floor
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_03" rowspan="2">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Third floor
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_04">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Fourth floor
-                                                            </label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_04">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Fourth floor
-                                                            </label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="class_02">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">Second floor
-                                                            </label>                                                        
-                                                        </td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td class="class_01">
-                                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                <input type="checkbox" class="form-check-input">First floor
-                                                            </label>
-                                                        </td>
-                                                        <td class="class_02"></td>
-                                                        <td class="class_03"></td>
-                                                        <td class="class_04"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="tab-pane fade" id="page_02" role="tabpanel" aria-labelledby="tab_page_02">
-
-                                    
-                                    222
-
-                                </div>
-                            </div>
-                            <!--tab con end-->
-
-                           
-                            
-                            <div class="btn_box pb-0">
-                                <button type="submit" class="btn btn-secondary" title="回上一頁" onclick="history.go(-1);return false;">回上一頁</button>
-                                <button type="submit" class="btn btn-primary" title="儲存">儲存</button>
-                            </div>
-                            
-                        </div>
-
+                            <tr>
+                              <td class="class_01">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />第一層
+                                </label>
+                              </td>
+                              <td class="class_02"></td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
 
-                    <!--footer start-->
-                    <script>$.include("blocks/footer.html");</script>
-                    <!--footer end-->
+                    <div class="toggle_02" style="display: none">
+                      <div class="competence_title">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                        />系統管理設定
+                      </div>
+                      <table
+                        width="100%"
+                        cellspacing="0"
+                        cellpadding="0"
+                        class="competence_table mb-5"
+                      >
+                        <tbody>
+                          <tr>
+                            <td class="class_01">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />系統管理
+                              </label>
+                            </td>
 
+                            <td class="class_02">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />雷普功能設定
+                              </label>
+
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />驗證管理
+                              </label>
+
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />後台介面設定
+                              </label>
+
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />權限管理
+                              </label>
+
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />IP限制管理
+                              </label>
+
+                              <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                                            <input type="checkbox" class="form-check-input">驗證綁定網域
+                                                        </label> -->
+
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />審核管理
+                              </label>
+
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />管理紀錄查詢
+                              </label>
+
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />多國語系設定
+                              </label>
+
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />郵件主機設定
+                              </label>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="class_01">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />網站選單
+                              </label>
+                            </td>
+
+                            <td class="class_02">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />主要選單
+                              </label>
+
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />上方選單
+                              </label>
+
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />下方選單
+                              </label>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td class="class_01">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />版面設定
+                              </label>
+                            </td>
+
+                            <td class="class_02">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />網站版面資訊設定
+                              </label>
+
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />語系通用文字設定
+                              </label>
+
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />入口首頁配置
+                              </label>
+
+                              <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                                            <input type="checkbox" class="form-check-input">網站版型管理
+                                                        </label> -->
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td class="class_01">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />模組元件
+                              </label>
+                            </td>
+
+                            <td class="class_02">
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />SEO優化設定
+                              </label>
+
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />選單程式模組管理
+                              </label>
+
+                              <!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                                            <input type="checkbox" class="form-check-input">電子報管理
+                                                        </label> -->
+
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />全文檢索管理
+                              </label>
+
+                              <label
+                                class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                              >
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                />流量分析
+                              </label>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <div class="competence_title">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                        />主要選單
+                      </div>
+                      <div class="table-responsive">
+                        <table
+                          width="100%"
+                          cellspacing="0"
+                          cellpadding="0"
+                          class="competence_table mb-5"
+                        >
+                          <tbody>
+                            <tr>
+                              <td class="class_01" rowspan="4">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />About
+                                </label>
+                              </td>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Purpose
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
+                            <tr>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Organize
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
+                            <tr>
+                              <td class="class_02" rowspan="2">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Chief Introduction
+                                </label>
+                              </td>
+                              <td class="class_03">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Chairman
+                                </label>
+                              </td>
+                              <td class="class_04"></td>
+                            </tr>
+
+                            <tr>
+                              <td class="class_03">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Former Chairman
+                                </label>
+                              </td>
+                              <td class="class_04"></td>
+                            </tr>
+
+                            <tr>
+                              <td class="class_01" rowspan="3">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />News
+                                </label>
+                              </td>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Announcement
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
+
+                            <tr>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Activity
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
+
+                            <tr>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Recruitment
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
+                            <tr>
+                              <td class="class_01" rowspan="4">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />First floor
+                                </label>
+                              </td>
+                              <td class="class_02" rowspan="3">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Second floor
+                                </label>
+                              </td>
+                              <td class="class_03">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Third floor
+                                </label>
+                              </td>
+                              <td class="class_04"></td>
+                            </tr>
+                            <tr>
+                              <td class="class_03" rowspan="2">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Third floor
+                                </label>
+                              </td>
+                              <td class="class_04">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Fourth floor
+                                </label>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="class_04">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Fourth floor
+                                </label>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="class_02">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />Second floor
+                                </label>
+                              </td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
+
+                            <tr>
+                              <td class="class_01">
+                                <label
+                                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                  />First floor
+                                </label>
+                              </td>
+                              <td class="class_02"></td>
+                              <td class="class_03"></td>
+                              <td class="class_04"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="page_02"
+                    role="tabpanel"
+                    aria-labelledby="tab_page_02"
+                  >
+                    222
+                  </div>
                 </div>
-                <!--main_con end-->
+                <!--tab con end-->
 
+                <div class="btn_box pb-0">
+                  <button
+                    type="submit"
+                    class="btn btn-secondary"
+                    title="回上一頁"
+                    onclick="
+                      history.go(-1);
+                      return false;
+                    "
+                  >
+                    回上一頁
+                  </button>
+                  <button type="submit" class="btn btn-primary" title="儲存">
+                    儲存
+                  </button>
+                </div>
+              </div>
+              <!--main content end-->
             </div>
+
+            <!--footer start-->
+            <script>
+              $.include("blocks/footer.html");
+            </script>
+            <!--footer end-->
+          </div>
+          <!--main_con end-->
         </div>
+      </div>
     </div>
 
     <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
-        <i class="ki-duotone ki-arrow-up">
-            <span class="path1"></span>
-            <span class="path2"></span>
-        </i>
+      <i class="ki-duotone ki-arrow-up">
+        <span class="path1"></span>
+        <span class="path2"></span>
+      </i>
     </div>
 
     <script src="js/plugins.bundle.js"></script>
     <script src="js/scripts.bundle.js"></script>
     <script src="js/datatables.bundle.js"></script>
-
-</body>
+  </body>
 </html>

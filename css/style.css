@@ -1,7 +1,8 @@
 @charset "UTF-8";
 :root {
   --bs-primary: #22a5a8;
-  --bs-primary-rgb: 34, 165, 168; /* RGB 格式，供帶透明度的元件使用 */
+  --bs-primary-rgb: 34, 165, 168;
+  /* RGB 格式，供帶透明度的元件使用 */
 }
 
 .color_01 {
@@ -143,7 +144,8 @@ img {
 }
 
 .page_btn .content-block[style*="display: block"] {
-  display: inline-block !important; /* 強制為 inline-block */
+  display: inline-block !important;
+  /* 強制為 inline-block */
 }
 
 .col-form-label {
@@ -476,6 +478,7 @@ button {
 }
 .app-sidebar .menu-select {
   background: rgba(255, 255, 255, 0.85);
+  /* 隱藏所有 tab-pane 預設只顯示 active */
 }
 .app-sidebar .menu-select .menu-icon {
   display: none !important;
@@ -504,9 +507,7 @@ button {
   background-color: transparent;
   padding: 2.5px 10px;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   border-radius: 5px;
   font-size: 1.1em;
   position: relative;
@@ -538,9 +539,6 @@ button {
 }
 .app-sidebar .menu-select .select_box .select-items.open {
   display: block;
-}
-.app-sidebar .menu-select {
-  /* 隱藏所有 tab-pane 預設只顯示 active */
 }
 .app-sidebar .menu-select .tab-pane {
   display: none;
@@ -1182,34 +1180,29 @@ input[type=color] {
 .chart_box {
   padding: 5% 6% !important;
 }
-.chart_box .chart_con {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .chart_table {
   padding: 5%;
 }
 
-#chart1, #chart2, #chart3 {
+#chart1 {
   max-width: 300px;
   max-height: 300px;
 }
 
 /*chart_list*/
 .chart_list {
-  display: inline-block;
+  float: left;
   width: 100%;
   list-style: none;
   /*border:solid #ccc 1px;*/
-  padding: 20px 0 0 20px;
+  padding: 20px 0 20px 20px;
   border-radius: 5px;
   margin-left: 5px;
 }
 
 .chart_list li {
-  display: inline-block;
+  float: left;
   width: 140px;
   font-size: 0.9em;
   line-height: 130%;
@@ -1373,66 +1366,76 @@ input[type=color] {
   margin: 1px 3px;
 }
 
-/*index_tag*/
-.index_tag div .box {
-  padding: 20px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-.index_tag div .box i {
-  font-size: 6em;
-  position: absolute;
-  color: rgba(255, 255, 255, 0.3);
-  margin: 0 0 0 -30px;
-}
-.index_tag div .box .title {
-  color: #fff;
-  text-align: right;
-  margin-top: -10px;
-  margin-bottom: 20px;
-}
-.index_tag div .box .quantity {
-  font-size: 3em;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-align: right;
-  color: #fff;
-}
-.index_tag div:nth-child(4n+1) .box {
-  background: #ec6a4a;
-}
-.index_tag div:nth-child(4n+2) .box {
-  background: #22a5a8;
-}
-.index_tag div:nth-child(4n+3) .box {
-  background: #B648B7;
-}
-.index_tag div:nth-child(4n) .box {
-  background: #1588b6;
-}
-
-/*index_chrat*/
-.index_chrat .index_chrat_title {
-  width: calc(100% - 20px);
-  margin: 0 0 0 10px;
-  font-size: 1.3em;
-  padding: 10px 10px 8px 15px;
-}
-.index_chrat .chart_con {
+/*index_news*/
+.index_news nav {
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.index_chrat .chart_box {
-  background: #efefef;
-  border-radius: 10px;
+.index_news nav .nav-tabs {
+  margin-bottom: 0;
+  border: none;
 }
-.index_chrat .chart_title {
+.index_news nav .nav-tabs .nav-link {
+  font-size: 1.5em;
+}
+.index_news .page_table .title {
   font-size: 1.1em;
 }
-.index_chrat > .col-12 {
-  margin-bottom: 20px;
+
+.empty_box {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.new_tag {
+  font-weight: 400 !important;
+}
+
+/*index_service*/
+.index_service {
+  float: left;
+  width: 100%;
+}
+.index_service .service_edit {
+  margin: 16px 0 0 0;
+}
+.index_service .service_edit button {
+  border: none;
+}
+.index_service .service_list {
+  float: left;
+  width: 100%;
+  padding: 0;
+}
+.index_service .service_list .item {
+  width: 20%;
+  float: left;
+  padding: 8px;
+}
+.index_service .service_list .item a {
+  float: left;
+  width: 100%;
+  border-radius: 8px;
+  height: 100%;
+  padding: 20px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90px;
+  text-align: center;
+}
+.index_service .service_list .item a .type {
+  font-size: 0.9em;
+}
+.index_service .service_list .item a .title {
+  font-size: 1.2em;
+}
+.index_service .service_list .item a:hover {
+  color: #fff !important;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 }
 
 /*competence*/
@@ -1914,8 +1917,11 @@ input[type=color] {
   right: 50%;
   bottom: 0;
   height: 2px;
+  -webkit-transition-property: left, right;
   transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
 .nav-tabs .nav-link.hvr-overline-from-center:hover:before {
@@ -1971,6 +1977,20 @@ input[type=color] {
 }
 
 /*------------------------------------------系統色系--------------------------------------------------------*/
+.body_color_01 {
+  /*header*/
+  /*login*/
+  /*left menu*/
+  /*scrolltop*/
+  /*頁籤 bs5*/
+  /*nav-tabs*/
+  /*table*/
+  /*page_table*/
+  /*pagination*/
+  /*permissions_icon權限圖示*/
+  /*index_service*/
+  /*header*/
+}
 .body_color_01 a {
   color: #22a5a8;
 }
@@ -2000,17 +2020,11 @@ input[type=color] {
 .body_color_01 .bg-primary {
   background-color: #22a5a8 !important;
 }
-.body_color_01 {
-  /*header*/
-}
 .body_color_01 [data-kt-app-layout=dark-sidebar] .app-header, .body_color_01 .app-header {
   background: #0e3f59 !important;
 }
 .body_color_01 .app-header-menu .menu-item .menu-link:hover .menu-icon span {
   color: #fff !important;
-}
-.body_color_01 {
-  /*login*/
 }
 .body_color_01 .login_font {
   background-color: #22a5a8;
@@ -2020,9 +2034,6 @@ input[type=color] {
 }
 .body_color_01 .show_hide_password .password_eye:hover {
   color: #0c7678;
-}
-.body_color_01 {
-  /*left menu*/
 }
 .body_color_01[data-kt-app-layout=dark-sidebar] .app-sidebar {
   background-color: #0c7678 !important;
@@ -2036,18 +2047,11 @@ input[type=color] {
 .body_color_01 .app-sidebar .menu-select .select_box .menu-arrow:after {
   background-color: #0c7678;
 }
-.body_color_01 {
-  /*scrolltop*/
-}
 .body_color_01 .scrolltop {
   background: #0c7678 !important;
 }
 .body_color_01 .scrolltop:hover {
   background: #0c7678 !important;
-}
-.body_color_01 {
-  /*頁籤 bs5*/
-  /*nav-tabs*/
 }
 .body_color_01 .nav-tabs .nav-link.active {
   color: #22a5a8;
@@ -2058,9 +2062,6 @@ input[type=color] {
 }
 .body_color_01 .nav-tabs .nav-link.hvr-overline-from-center:before {
   background: #22a5a8;
-}
-.body_color_01 {
-  /*table*/
 }
 .body_color_01 .table.table-hover tbody tr:hover a:hover {
   color: #0c7678 !important;
@@ -2074,15 +2075,8 @@ input[type=color] {
 .body_color_01 .table .sorting_btn .btn:hover i {
   color: #0c7678 !important;
 }
-.body_color_01 {
-  /*page_table*/
-  /*pagination*/
-}
 .body_color_01 .pagination .btn_page i:hover, .body_color_01 .pagination .btn_page i:focus {
   color: #0c7678 !important;
-}
-.body_color_01 {
-  /*permissions_icon權限圖示*/
 }
 .body_color_01 .permissions_icon i.active {
   color: #22a5a8 !important;
@@ -2090,10 +2084,27 @@ input[type=color] {
 .body_color_01 .permissions_icon i:hover {
   color: #0c7678 !important;
 }
-.body_color_01 {
-  /*header*/
+.body_color_01 .index_service .service_list .item a {
+  background: #0c7678;
+}
+.body_color_01 .index_service .service_list .item a:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 }
 
+.body_color_02 {
+  /*header*/
+  /*login*/
+  /*left menu*/
+  /*scrolltop*/
+  /*頁籤 bs5*/
+  /*nav-tabs*/
+  /*table*/
+  /*page_table*/
+  /*pagination*/
+  /*permissions_icon權限圖示*/
+  /*index_service*/
+  /*header*/
+}
 .body_color_02 a {
   color: #68b149;
 }
@@ -2123,17 +2134,11 @@ input[type=color] {
 .body_color_02 .bg-primary {
   background-color: #68b149 !important;
 }
-.body_color_02 {
-  /*header*/
-}
 .body_color_02 [data-kt-app-layout=dark-sidebar] .app-header, .body_color_02 .app-header {
   background: #23580c !important;
 }
 .body_color_02 .app-header-menu .menu-item .menu-link:hover .menu-icon span {
   color: #fff !important;
-}
-.body_color_02 {
-  /*login*/
 }
 .body_color_02 .login_font {
   background-color: #68b149;
@@ -2143,9 +2148,6 @@ input[type=color] {
 }
 .body_color_02 .show_hide_password .password_eye:hover {
   color: #4b7c36;
-}
-.body_color_02 {
-  /*left menu*/
 }
 .body_color_02[data-kt-app-layout=dark-sidebar] .app-sidebar {
   background-color: #4b7c36 !important;
@@ -2159,18 +2161,11 @@ input[type=color] {
 .body_color_02 .app-sidebar .menu-select .select_box .menu-arrow:after {
   background-color: #4b7c36;
 }
-.body_color_02 {
-  /*scrolltop*/
-}
 .body_color_02 .scrolltop {
   background: #4b7c36 !important;
 }
 .body_color_02 .scrolltop:hover {
   background: #4b7c36 !important;
-}
-.body_color_02 {
-  /*頁籤 bs5*/
-  /*nav-tabs*/
 }
 .body_color_02 .nav-tabs .nav-link.active {
   color: #68b149;
@@ -2181,9 +2176,6 @@ input[type=color] {
 }
 .body_color_02 .nav-tabs .nav-link.hvr-overline-from-center:before {
   background: #68b149;
-}
-.body_color_02 {
-  /*table*/
 }
 .body_color_02 .table.table-hover tbody tr:hover a:hover {
   color: #4b7c36 !important;
@@ -2197,15 +2189,8 @@ input[type=color] {
 .body_color_02 .table .sorting_btn .btn:hover i {
   color: #4b7c36 !important;
 }
-.body_color_02 {
-  /*page_table*/
-  /*pagination*/
-}
 .body_color_02 .pagination .btn_page i:hover, .body_color_02 .pagination .btn_page i:focus {
   color: #4b7c36 !important;
-}
-.body_color_02 {
-  /*permissions_icon權限圖示*/
 }
 .body_color_02 .permissions_icon i.active {
   color: #68b149 !important;
@@ -2213,10 +2198,27 @@ input[type=color] {
 .body_color_02 .permissions_icon i:hover {
   color: #4b7c36 !important;
 }
-.body_color_02 {
-  /*header*/
+.body_color_02 .index_service .service_list .item a {
+  background: #4b7c36;
+}
+.body_color_02 .index_service .service_list .item a:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 }
 
+.body_color_03 {
+  /*header*/
+  /*login*/
+  /*left menu*/
+  /*scrolltop*/
+  /*頁籤 bs5*/
+  /*nav-tabs*/
+  /*table*/
+  /*page_table*/
+  /*pagination*/
+  /*permissions_icon權限圖示*/
+  /*index_service*/
+  /*header*/
+}
 .body_color_03 a {
   color: #990000;
 }
@@ -2246,17 +2248,11 @@ input[type=color] {
 .body_color_03 .bg-primary {
   background-color: #990000 !important;
 }
-.body_color_03 {
-  /*header*/
-}
 .body_color_03 [data-kt-app-layout=dark-sidebar] .app-header, .body_color_03 .app-header {
   background: #480606 !important;
 }
 .body_color_03 .app-header-menu .menu-item .menu-link:hover .menu-icon span {
   color: #fff !important;
-}
-.body_color_03 {
-  /*login*/
 }
 .body_color_03 .login_font {
   background-color: #990000;
@@ -2266,9 +2262,6 @@ input[type=color] {
 }
 .body_color_03 .show_hide_password .password_eye:hover {
   color: #6c1515;
-}
-.body_color_03 {
-  /*left menu*/
 }
 .body_color_03[data-kt-app-layout=dark-sidebar] .app-sidebar {
   background-color: #6c1515 !important;
@@ -2282,18 +2275,11 @@ input[type=color] {
 .body_color_03 .app-sidebar .menu-select .select_box .menu-arrow:after {
   background-color: #6c1515;
 }
-.body_color_03 {
-  /*scrolltop*/
-}
 .body_color_03 .scrolltop {
   background: #6c1515 !important;
 }
 .body_color_03 .scrolltop:hover {
   background: #6c1515 !important;
-}
-.body_color_03 {
-  /*頁籤 bs5*/
-  /*nav-tabs*/
 }
 .body_color_03 .nav-tabs .nav-link.active {
   color: #990000;
@@ -2304,9 +2290,6 @@ input[type=color] {
 }
 .body_color_03 .nav-tabs .nav-link.hvr-overline-from-center:before {
   background: #990000;
-}
-.body_color_03 {
-  /*table*/
 }
 .body_color_03 .table.table-hover tbody tr:hover a:hover {
   color: #6c1515 !important;
@@ -2320,15 +2303,8 @@ input[type=color] {
 .body_color_03 .table .sorting_btn .btn:hover i {
   color: #6c1515 !important;
 }
-.body_color_03 {
-  /*page_table*/
-  /*pagination*/
-}
 .body_color_03 .pagination .btn_page i:hover, .body_color_03 .pagination .btn_page i:focus {
   color: #6c1515 !important;
-}
-.body_color_03 {
-  /*permissions_icon權限圖示*/
 }
 .body_color_03 .permissions_icon i.active {
   color: #990000 !important;
@@ -2336,10 +2312,27 @@ input[type=color] {
 .body_color_03 .permissions_icon i:hover {
   color: #6c1515 !important;
 }
-.body_color_03 {
-  /*header*/
+.body_color_03 .index_service .service_list .item a {
+  background: #6c1515;
+}
+.body_color_03 .index_service .service_list .item a:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 }
 
+.body_color_04 {
+  /*header*/
+  /*login*/
+  /*left menu*/
+  /*scrolltop*/
+  /*頁籤 bs5*/
+  /*nav-tabs*/
+  /*table*/
+  /*page_table*/
+  /*pagination*/
+  /*permissions_icon權限圖示*/
+  /*index_service*/
+  /*header*/
+}
 .body_color_04 a {
   color: #d4a03a;
 }
@@ -2369,17 +2362,11 @@ input[type=color] {
 .body_color_04 .bg-primary {
   background-color: #d4a03a !important;
 }
-.body_color_04 {
-  /*header*/
-}
 .body_color_04 [data-kt-app-layout=dark-sidebar] .app-header, .body_color_04 .app-header {
   background: #9b762d !important;
 }
 .body_color_04 .app-header-menu .menu-item .menu-link:hover .menu-icon span {
   color: #fff !important;
-}
-.body_color_04 {
-  /*login*/
 }
 .body_color_04 .login_font {
   background-color: #d4a03a;
@@ -2389,9 +2376,6 @@ input[type=color] {
 }
 .body_color_04 .show_hide_password .password_eye:hover {
   color: #9b762d;
-}
-.body_color_04 {
-  /*left menu*/
 }
 .body_color_04[data-kt-app-layout=dark-sidebar] .app-sidebar {
   background-color: #9b762d !important;
@@ -2405,18 +2389,11 @@ input[type=color] {
 .body_color_04 .app-sidebar .menu-select .select_box .menu-arrow:after {
   background-color: #9b762d;
 }
-.body_color_04 {
-  /*scrolltop*/
-}
 .body_color_04 .scrolltop {
   background: #9b762d !important;
 }
 .body_color_04 .scrolltop:hover {
   background: #9b762d !important;
-}
-.body_color_04 {
-  /*頁籤 bs5*/
-  /*nav-tabs*/
 }
 .body_color_04 .nav-tabs .nav-link.active {
   color: #d4a03a;
@@ -2427,9 +2404,6 @@ input[type=color] {
 }
 .body_color_04 .nav-tabs .nav-link.hvr-overline-from-center:before {
   background: #d4a03a;
-}
-.body_color_04 {
-  /*table*/
 }
 .body_color_04 .table.table-hover tbody tr:hover a:hover {
   color: #9b762d !important;
@@ -2443,15 +2417,8 @@ input[type=color] {
 .body_color_04 .table .sorting_btn .btn:hover i {
   color: #9b762d !important;
 }
-.body_color_04 {
-  /*page_table*/
-  /*pagination*/
-}
 .body_color_04 .pagination .btn_page i:hover, .body_color_04 .pagination .btn_page i:focus {
   color: #9b762d !important;
-}
-.body_color_04 {
-  /*permissions_icon權限圖示*/
 }
 .body_color_04 .permissions_icon i.active {
   color: #d4a03a !important;
@@ -2459,10 +2426,27 @@ input[type=color] {
 .body_color_04 .permissions_icon i:hover {
   color: #9b762d !important;
 }
-.body_color_04 {
-  /*header*/
+.body_color_04 .index_service .service_list .item a {
+  background: #9b762d;
+}
+.body_color_04 .index_service .service_list .item a:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 }
 
+.body_color_05 {
+  /*header*/
+  /*login*/
+  /*left menu*/
+  /*scrolltop*/
+  /*頁籤 bs5*/
+  /*nav-tabs*/
+  /*table*/
+  /*page_table*/
+  /*pagination*/
+  /*permissions_icon權限圖示*/
+  /*index_service*/
+  /*header*/
+}
 .body_color_05 a {
   color: #e67d44;
 }
@@ -2492,17 +2476,11 @@ input[type=color] {
 .body_color_05 .bg-primary {
   background-color: #e67d44 !important;
 }
-.body_color_05 {
-  /*header*/
-}
 .body_color_05 [data-kt-app-layout=dark-sidebar] .app-header, .body_color_05 .app-header {
   background: #a55e38 !important;
 }
 .body_color_05 .app-header-menu .menu-item .menu-link:hover .menu-icon span {
   color: #fff !important;
-}
-.body_color_05 {
-  /*login*/
 }
 .body_color_05 .login_font {
   background-color: #e67d44;
@@ -2512,9 +2490,6 @@ input[type=color] {
 }
 .body_color_05 .show_hide_password .password_eye:hover {
   color: #a55e38;
-}
-.body_color_05 {
-  /*left menu*/
 }
 .body_color_05[data-kt-app-layout=dark-sidebar] .app-sidebar {
   background-color: #a55e38 !important;
@@ -2528,18 +2503,11 @@ input[type=color] {
 .body_color_05 .app-sidebar .menu-select .select_box .menu-arrow:after {
   background-color: #a55e38;
 }
-.body_color_05 {
-  /*scrolltop*/
-}
 .body_color_05 .scrolltop {
   background: #a55e38 !important;
 }
 .body_color_05 .scrolltop:hover {
   background: #a55e38 !important;
-}
-.body_color_05 {
-  /*頁籤 bs5*/
-  /*nav-tabs*/
 }
 .body_color_05 .nav-tabs .nav-link.active {
   color: #e67d44;
@@ -2550,9 +2518,6 @@ input[type=color] {
 }
 .body_color_05 .nav-tabs .nav-link.hvr-overline-from-center:before {
   background: #e67d44;
-}
-.body_color_05 {
-  /*table*/
 }
 .body_color_05 .table.table-hover tbody tr:hover a:hover {
   color: #a55e38 !important;
@@ -2566,15 +2531,8 @@ input[type=color] {
 .body_color_05 .table .sorting_btn .btn:hover i {
   color: #a55e38 !important;
 }
-.body_color_05 {
-  /*page_table*/
-  /*pagination*/
-}
 .body_color_05 .pagination .btn_page i:hover, .body_color_05 .pagination .btn_page i:focus {
   color: #a55e38 !important;
-}
-.body_color_05 {
-  /*permissions_icon權限圖示*/
 }
 .body_color_05 .permissions_icon i.active {
   color: #e67d44 !important;
@@ -2582,8 +2540,11 @@ input[type=color] {
 .body_color_05 .permissions_icon i:hover {
   color: #a55e38 !important;
 }
-.body_color_05 {
-  /*header*/
+.body_color_05 .index_service .service_list .item a {
+  background: #a55e38;
+}
+.body_color_05 .index_service .service_list .item a:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 }
 
 /*--------------------------------------------------------------------------------------------------*/
@@ -2617,6 +2578,7 @@ input[type=color] {
     width: calc(100% - 50px);
     max-width: 1140px;
   }
+
   .modal-lg {
     width: calc(100% - 50px);
     max-width: 800px;
@@ -2657,6 +2619,7 @@ input[type=color] {
     display: block;
     font-size: 1rem !important;
   }
+
   /*mod_list*/
   .mod_list .item {
     width: 20%;
@@ -2670,11 +2633,24 @@ input[type=color] {
     clear: both;
   }
 }
+@media (max-width: 1400px) {
+  /*index_service*/
+  .index_service .service_list .item {
+    width: 25%;
+  }
+}
+@media (max-width: 1200px) {
+  /*index_service*/
+  .index_service .service_list .item {
+    width: 33.3%;
+  }
+}
 @media (max-width: 992px) {
   /*menu*/
   .menu-sub-lg-down-indention .menu-sub:not([data-popper-placement]) {
     margin-left: 2.3rem;
   }
+
   .app-header-menu {
     background-color: #0c7678 !important;
   }
@@ -2684,9 +2660,15 @@ input[type=color] {
   .app-header-menu .menu-sub .menu-item .menu-link .menu-title {
     color: #fff !important;
   }
+
   /*competence*/
   .competence_table .class_01 {
     width: 120px;
+  }
+
+  /*index_service*/
+  .index_service .service_list .item {
+    width: 33.3%;
   }
 }
 @media (max-width: 767px) {
@@ -2694,6 +2676,7 @@ input[type=color] {
   .login_input {
     min-height: calc(100vh - 200px);
   }
+
   /*pagination*/
   .pagination {
     display: block;
@@ -2701,6 +2684,7 @@ input[type=color] {
   .pagination .page_icon {
     text-align: center;
   }
+
   /*mod_list*/
   .mod_list .item {
     width: 33.3%;
@@ -2716,14 +2700,22 @@ input[type=color] {
   .mod_list .item a {
     min-height: 100px;
   }
+
   /*permissions_module*/
   .permissions_module li {
     width: 50%;
   }
+
+  /*index_service*/
+  .index_service .service_list .item {
+    width: 50%;
+  }
+
   /*chart*/
   .chart_box {
     padding: 5% 6% 0 6% !important;
   }
+
   .chart_table {
     padding: 5%;
   }
@@ -2742,6 +2734,7 @@ input[type=color] {
     width: 100%;
     padding: 20px 0 0 0;
   }
+
   .mod_list .item {
     width: 50%;
     float: left;
@@ -2753,6 +2746,7 @@ input[type=color] {
   .mod_list .item:nth-child(2n+1) {
     clear: both;
   }
+
   /*permissions_module*/
   .permissions_module li {
     width: 50%;
@@ -3328,7 +3322,7 @@ table[align=center] {
   line-clamp: 2;
   /* fallback */
   line-height: 1.5;
-  max-height: 3em;
+  max-height: calc(1.5em * 2);
 }
 
 .record_text {
@@ -3339,7 +3333,7 @@ table[align=center] {
   line-clamp: 6;
   /* fallback */
   line-height: 1.5;
-  max-height: 9em;
+  max-height: calc(1.5em * 6);
 }
 
 @media (max-width: 480px) {
@@ -3447,27 +3441,33 @@ table[align=center] {
 
 /*清單*/
 .ol_01 {
-  list-style-type: cjk-ideographic; /*一, 二, 三*/
+  list-style-type: cjk-ideographic;
+  /*一, 二, 三*/
 }
 
 .ol_02 {
-  list-style-type: upper-latin; /*A, B, C*/
+  list-style-type: upper-latin;
+  /*A, B, C*/
 }
 
 .ol_03 {
-  list-style-type: lower-alpha; /*a, b, c*/
+  list-style-type: lower-alpha;
+  /*a, b, c*/
 }
 
 .ol_04 {
-  list-style-type: decimal; /*1,2,3*/
+  list-style-type: decimal;
+  /*1,2,3*/
 }
 
 .ul_01 {
-  list-style-type: square; /*實心方塊*/
+  list-style-type: square;
+  /*實心方塊*/
 }
 
 .ul_02 {
-  list-style-type: disc; /*實心圓*/
+  list-style-type: disc;
+  /*實心圓*/
 }
 
 .ul_none, .ol_none {
@@ -3508,7 +3508,8 @@ table[align=center] {
 /*for IE*/
 @media screen\0  {
   .ol_01 {
-    list-style-type: decimal-leading-zero; /*01,02,03*/
+    list-style-type: decimal-leading-zero;
+    /*01,02,03*/
   }
 }
 /*錨點*/
@@ -3926,20 +3927,26 @@ table[align=center] {
   a[href]:after {
     content: none !important;
   }
+
   /*顯示背景圖*/
   *,
-  *:before,
-  *:after {
+*:before,
+*:after {
     background-color: inherit !important;
   }
+
   .bg_print {
-    -webkit-print-color-adjust: exact !important; /* Chrome, Safari */
-    print-color-adjust: exact !important; /* Chrome, Safari */
+    -webkit-print-color-adjust: exact !important;
+    /* Chrome, Safari */
+    print-color-adjust: exact !important;
+    /* Chrome, Safari */
   }
+
   /*解決Safari 在列印時使用異常小的字體*/
   .container {
     width: auto;
   }
+
   .con_box {
     margin: 0;
     border: initial;
@@ -4028,4 +4035,4 @@ table[align=center] {
   .rwd-table .text-end, .rwd-table .text-center {
     text-align: left !important;
   }
-}/*# sourceMappingURL=style.css.map */
+}

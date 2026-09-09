@@ -1,7 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-hant-tw">
-
-<head>
+  <head>
     <title>TaiPlay後台管理系統</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,163 +10,220 @@
     <link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
     <link href="scss/style.css" rel="stylesheet" type="text/css" />
     <!--font icon-->
-    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/all.min.css" />
 
     <script src="js/jquery.min.js"></script>
     <script src="js/main.js"></script>
 
     <!--tinymce-->
-    <script src="https://cdn.tiny.cloud/1/1adhg4b1kc06unjm2tbxswleya4yo8bt3x8s932senq34okf/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
-    <script src="https://cdn.tiny.cloud/1/1adhg4b1kc06unjm2tbxswleya4yo8bt3x8s932senq34okf/tinymce/8/plugins.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
-</head>
+    <script
+      src="https://cdn.tiny.cloud/1/1adhg4b1kc06unjm2tbxswleya4yo8bt3x8s932senq34okf/tinymce/8/tinymce.min.js"
+      referrerpolicy="origin"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.tiny.cloud/1/1adhg4b1kc06unjm2tbxswleya4yo8bt3x8s932senq34okf/tinymce/8/plugins.min.js"
+      referrerpolicy="origin"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true"
-    data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true"
-    data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true"
-    data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default body_color_01 left_menu_bg">
-
+  <body
+    id="kt_app_body"
+    data-kt-app-layout="dark-sidebar"
+    data-kt-app-header-fixed="true"
+    data-kt-app-sidebar-enabled="true"
+    data-kt-app-sidebar-fixed="true"
+    data-kt-app-sidebar-hoverable="true"
+    data-kt-app-sidebar-push-header="true"
+    data-kt-app-sidebar-push-toolbar="true"
+    data-kt-app-sidebar-push-footer="true"
+    data-kt-app-toolbar-enabled="true"
+    class="app-default body_color_01 left_menu_bg"
+  >
     <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
-        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+      <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+        <!--header start-->
+        <script>
+          $.include("blocks/header.html");
+        </script>
+        <!--header end-->
 
-            <!--header start-->
-            <script>$.include("blocks/header.html");</script>
-            <!--header end-->
+        <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+          <!--left menu start-->
+          <script>
+            $.include("blocks/left_menu.html");
+          </script>
+          <!--left menu end-->
 
-            <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+          <!--main_con start-->
+          <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+            <div class="d-flex flex-column flex-column-fluid">
+              <!--main content start-->
 
-                <!--left menu start-->
-                <script>$.include("blocks/left_menu.html");</script>
-                <!--left menu end-->
+              <!--page_title star-->
+              <div id="kt_app_toolbar" class="app-toolbar py-3">
+                <div
+                  id="kt_app_toolbar_container"
+                  class="app-container container-xxl d-flex flex-stack"
+                >
+                  <!--title start-->
+                  <div
+                    class="page-title d-flex flex-column justify-content-center flex-wrap me-3"
+                  >
+                    <!--breadcrumb start-->
+                    <ul class="breadcrumb breadcrumb-separatorless my-0 py-1">
+                      <li class="breadcrumb-item">
+                        <a href="index.html">首頁</a>
+                      </li>
+                      <li class="breadcrumb-item">行程管理</li>
+                      <li class="breadcrumb-item">
+                        <a href="trip.html">行程列表</a>
+                      </li>
+                    </ul>
+                    <!--breadcrumb end-->
 
-                <!--main_con start-->
-                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-                    <div class="d-flex flex-column flex-column-fluid">
-
-                        <!--page_title star-->
-                        <div id="kt_app_toolbar" class="app-toolbar py-3">
-                            <div id="kt_app_toolbar_container" class="app-container  container-xxl d-flex flex-stack ">
-
-                                <!--title start-->
-                                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
-
-                                    <!--breadcrumb start-->
-                                    <ul class="breadcrumb breadcrumb-separatorless  my-0 py-1">
-                                        <li class="breadcrumb-item">
-                                            <a href="index.html">首頁</a>
-                                        </li>
-                                        <li class="breadcrumb-item">行程管理</li>
-                                        <li class="breadcrumb-item"><a href="trip.html">行程列表</a></li>
-                                    </ul>
-                                    <!--breadcrumb end-->
-
-                                    <h2 class="page-heading d-flex flex-column justify-content-center my-0">編輯旅伴icon管理</h2>
-
-                                </div>
-                                <!--title end-->
-
-                            </div>
-
-                        </div>
-                        <!--page_title end-->
-
-                        <div class="app-container container-xxl pb-10">
-
-                            <!--form_table start-->
-                            <div class="form_table rounded border border-gray-300">
-
-                                <div class="row">
-                                    <div class="col-md-2 col-form-label required">標題</div>
-                                    <div class="col-md-10 form_font">
-                                        <input type="text" class="form-control" max="100">
-                                        <div class="remark">限制100字內</div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-2 col-form-label">icon圖示</div>
-                                    <div class="col-md-10 form_font">
-                                        <div class="view_file">
-                                            <a href="javascript:;" class="btn btn-dark m-1 float-left" title="檢視檔案">檢視檔案 <i class="fa-solid fa-download download"></i></a>
-                                            <a href="#" class="delete"><i class="fa-solid fa-xmark"></i></a>
-                                        </div>
-                                        <input type="file">
-                                        <div class="remark">檔案類型svg，建議尺寸50*50px</div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-2 col-form-label">啟用</div>
-                                    <div class="col-md-10 form_font">
-                                        <label class="form-cheak-label">
-                                            <input class="form-check-input" type="radio" name="toggle_item_04" data-toggle="toggle_04_01" onclick="toggleChoice('toggle_item_04');" checked>是
-                                        </label>
-                                        <label class="form-cheak-label">
-                                            <input class="form-check-input" type="radio" name="toggle_item_04" data-toggle="toggle_04_02" onclick="toggleChoice('toggle_item_04');">否
-                                        </label>
-                                    </div>
-                                </div>
-
-
-                                <div class="row">
-                                    <div class="col-md-2 col-form-label">新增</div>
-                                    <div class="col-md-4 form_font">
-                                        <div class="page_group w-50px">
-                                            <div class="item">
-                                                <div class="title">人員</div>
-                                                <div class="input_font input-auto">admin</div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="title">時間</div>
-                                                <div class="input_font input-auto">2024/09/12 10:07:29</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 col-form-label">最後修改</div>
-                                    <div class="col-md-4 form_font">
-                                        <div class="page_group w-50px">
-                                            <div class="item">
-                                                <div class="title">人員</div>
-                                                <div class="input_font input-auto">admin</div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="title">時間</div>
-                                                <div class="input_font input-auto">2024/09/12 10:07:29</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!--form_table end-->
-                            
-                            <div class="btn_box pb-0">
-                                <button type="submit" class="btn btn-secondary" title="回上一頁" onclick="history.go(-1);return false;">回上一頁</button>
-                                <button type="submit" class="btn btn-primary" title="儲存">儲存</button>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!--footer start-->
-                    <script>$.include("blocks/footer.html");</script>
-                    <!--footer end-->
-
+                    <h2
+                      class="page-heading d-flex flex-column justify-content-center my-0"
+                    >
+                      編輯旅伴icon管理
+                    </h2>
+                  </div>
+                  <!--title end-->
                 </div>
-                <!--main_con end-->
+              </div>
+              <!--page_title end-->
 
+              <div class="app-container container-xxl pb-10">
+                <!--form_table start-->
+                <div class="form_table rounded border border-gray-300">
+                  <div class="row">
+                    <div class="col-md-2 col-form-label required">標題</div>
+                    <div class="col-md-10 form_font">
+                      <input type="text" class="form-control" max="100" />
+                      <div class="remark">限制100字內</div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-2 col-form-label">icon圖示</div>
+                    <div class="col-md-10 form_font">
+                      <div class="view_file">
+                        <a
+                          href="javascript:;"
+                          class="btn btn-dark m-1 float-left"
+                          title="檢視檔案"
+                          >檢視檔案 <i class="fa-solid fa-download download"></i
+                        ></a>
+                        <a href="#" class="delete"
+                          ><i class="fa-solid fa-xmark"></i
+                        ></a>
+                      </div>
+                      <input type="file" />
+                      <div class="remark">檔案類型svg，建議尺寸50*50px</div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-2 col-form-label">啟用</div>
+                    <div class="col-md-10 form_font">
+                      <label class="form-cheak-label">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="toggle_item_04"
+                          data-toggle="toggle_04_01"
+                          onclick="toggleChoice('toggle_item_04')"
+                          checked
+                        />是
+                      </label>
+                      <label class="form-cheak-label">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="toggle_item_04"
+                          data-toggle="toggle_04_02"
+                          onclick="toggleChoice('toggle_item_04')"
+                        />否
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-2 col-form-label">新增</div>
+                    <div class="col-md-4 form_font">
+                      <div class="page_group w-50px">
+                        <div class="item">
+                          <div class="title">人員</div>
+                          <div class="input_font input-auto">admin</div>
+                        </div>
+                        <div class="item">
+                          <div class="title">時間</div>
+                          <div class="input_font input-auto">
+                            2024/09/12 10:07:29
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-form-label">最後修改</div>
+                    <div class="col-md-4 form_font">
+                      <div class="page_group w-50px">
+                        <div class="item">
+                          <div class="title">人員</div>
+                          <div class="input_font input-auto">admin</div>
+                        </div>
+                        <div class="item">
+                          <div class="title">時間</div>
+                          <div class="input_font input-auto">
+                            2024/09/12 10:07:29
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--form_table end-->
+
+                <div class="btn_box pb-0">
+                  <button
+                    type="submit"
+                    class="btn btn-secondary"
+                    title="回上一頁"
+                    onclick="
+                      history.go(-1);
+                      return false;
+                    "
+                  >
+                    回上一頁
+                  </button>
+                  <button type="submit" class="btn btn-primary" title="儲存">
+                    儲存
+                  </button>
+                </div>
+              </div>
+              <!--main content end-->
             </div>
+
+            <!--footer start-->
+            <script>
+              $.include("blocks/footer.html");
+            </script>
+            <!--footer end-->
+          </div>
+          <!--main_con end-->
         </div>
+      </div>
     </div>
 
     <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
-        <i class="ki-duotone ki-arrow-up">
-            <span class="path1"></span>
-            <span class="path2"></span>
-        </i>
+      <i class="ki-duotone ki-arrow-up">
+        <span class="path1"></span>
+        <span class="path2"></span>
+      </i>
     </div>
 
     <script src="js/plugins.bundle.js"></script>
     <script src="js/scripts.bundle.js"></script>
     <script src="js/datatables.bundle.js"></script>
-</body>
+  </body>
 </html>

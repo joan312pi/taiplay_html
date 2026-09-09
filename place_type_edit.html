@@ -60,7 +60,6 @@
           <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
             <div class="d-flex flex-column flex-column-fluid">
               <!--main content start-->
-
               <!--page_title star-->
               <div id="kt_app_toolbar" class="app-toolbar py-3">
                 <div
@@ -76,9 +75,9 @@
                       <li class="breadcrumb-item">
                         <a href="index.html">首頁</a>
                       </li>
-                      <li class="breadcrumb-item">會員管理</li>
+                      <li class="breadcrumb-item">地點管理</li>
                       <li class="breadcrumb-item">
-                        <a href="user.html">會員列表</a>
+                        <a href="place_type.html">地點分類</a>
                       </li>
                     </ul>
                     <!--breadcrumb end-->
@@ -86,7 +85,7 @@
                     <h2
                       class="page-heading d-flex flex-column justify-content-center my-0"
                     >
-                      檢視會員資料
+                      編輯地點分類
                     </h2>
                   </div>
                   <!--title end-->
@@ -98,38 +97,16 @@
                 <!--form_table start-->
                 <div class="form_table rounded border border-gray-300">
                   <div class="row">
-                    <div class="col-md-2 col-form-label required">會員姓名</div>
-                    <div class="col-md-4 form_font">王小明</div>
-                    <div class="col-md-2 col-form-label required">Email</div>
-                    <div class="col-md-4 form_font">service@taiplay.com</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-md-2 col-form-label">生日</div>
-                    <div class="col-md-4 form_font">2000/08/01</div>
-                    <div class="col-md-2 col-form-label">性別</div>
-                    <div class="col-md-4 form_font">男</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-md-2 col-form-label">手機</div>
-                    <div class="col-md-4 form_font">0912-345-678</div>
-                    <div class="col-md-2 col-form-label">學歷</div>
-                    <div class="col-md-4 form_font">大學</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-md-2 col-form-label">居住縣市</div>
-                    <div class="col-md-4 form_font">台北市</div>
-                    <div class="col-md-2 col-form-label">地址</div>
-                    <div class="col-md-4 form_font">
-                      大安區和安里復興南路一段390號2樓
+                    <div class="col-md-2 col-form-label required">標題</div>
+                    <div class="col-md-10 form_font">
+                      <input type="text" class="form-control" max="100" />
+                      <div class="remark">限制100字內</div>
                     </div>
                   </div>
 
                   <div class="row">
-                    <div class="col-md-2 col-form-label">代表圖</div>
-                    <div class="col-md-4 form_font">
+                    <div class="col-md-2 col-form-label">icon圖示</div>
+                    <div class="col-md-10 form_font">
                       <div class="view_file">
                         <a
                           href="javascript:;"
@@ -137,10 +114,18 @@
                           title="檢視檔案"
                           >檢視檔案 <i class="fa-solid fa-download download"></i
                         ></a>
+                        <a href="#" class="delete"
+                          ><i class="fa-solid fa-xmark"></i
+                        ></a>
                       </div>
+                      <input type="file" />
+                      <div class="remark">檔案類型svg，建議尺寸50*50px</div>
                     </div>
+                  </div>
+
+                  <div class="row">
                     <div class="col-md-2 col-form-label">啟用</div>
-                    <div class="col-md-4 form_font">
+                    <div class="col-md-10 form_font">
                       <label class="form-cheak-label">
                         <input
                           class="form-check-input"
@@ -210,6 +195,9 @@
                   >
                     回上一頁
                   </button>
+                  <button type="submit" class="btn btn-primary" title="儲存">
+                    儲存
+                  </button>
                 </div>
               </div>
               <!--main content end-->
@@ -236,20 +224,5 @@
     <script src="js/plugins.bundle.js"></script>
     <script src="js/scripts.bundle.js"></script>
     <script src="js/datatables.bundle.js"></script>
-
-    <!--ckeditor start-->
-    <script src="js/ckeditor/ckeditor-classic.bundle.js"></script>
-    <script>
-      document.querySelectorAll(".ckeditor_classic").forEach((textarea) => {
-        ClassicEditor.create(textarea)
-          .then((editor) => {
-            console.log("Editor initialized for:", textarea);
-          })
-          .catch((error) => {
-            console.error("Error initializing editor:", error);
-          });
-      });
-    </script>
-    <!--ckeditor end-->
   </body>
 </html>

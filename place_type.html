@@ -48,7 +48,6 @@
           <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
             <div class="d-flex flex-column flex-column-fluid">
               <!--main content start-->
-
               <!--page_title star-->
               <div id="kt_app_toolbar" class="app-toolbar py-3">
                 <div
@@ -64,14 +63,14 @@
                       <li class="breadcrumb-item">
                         <a href="index.html">首頁</a>
                       </li>
-                      <li class="breadcrumb-item">行程管理</li>
+                      <li class="breadcrumb-item">地點管理</li>
                     </ul>
                     <!--breadcrumb end-->
 
                     <h2
                       class="page-heading d-flex flex-column justify-content-center my-0"
                     >
-                      行程列表
+                      地點列表
                     </h2>
                   </div>
                   <!--title end-->
@@ -86,23 +85,16 @@
                     <button
                       class="nav-link hvr-overline-from-center"
                       type="button"
-                      onclick="location.href = 'trip.html'"
+                      onclick="location.href = 'place.html'"
                     >
-                      檢視行程
-                    </button>
-                    <button
-                      class="nav-link hvr-overline-from-center"
-                      type="button"
-                      onclick="location.href = 'trip_transportation.html'"
-                    >
-                      交通方式管理
+                      檢視地點
                     </button>
                     <button
                       class="nav-link hvr-overline-from-center active"
                       type="button"
-                      onclick="location.href = 'trip_member_icon.html'"
+                      onclick="location.href = 'place_type.html'"
                     >
-                      旅伴icon管理
+                      地點分類
                     </button>
                   </div>
                 </nav>
@@ -118,7 +110,7 @@
                           type="submit"
                           class="btn btn-success"
                           title="新增"
-                          onclick="location.href = 'trip_member_icon_edit.html'"
+                          onclick="location.href = 'place_type_edit.html'"
                         >
                           <i class="fa-solid fa-plus"></i>
                         </button>
@@ -188,7 +180,7 @@
                               class="form-control d-inline-block w-50px"
                             />
                           </td>
-                          <td><a href="trip_member_icon_edit.html">男生</a></td>
+                          <td><a href="place_type_edit.html">景點</a></td>
                           <td class="text-center">
                             <!-- <input class="form-check-input" type="checkbox"> -->
                             <div
@@ -242,7 +234,7 @@
                               class="form-control d-inline-block w-50px"
                             />
                           </td>
-                          <td><a href="trip_member_icon_edit.html">女生</a></td>
+                          <td><a href="place_type_edit.html">收藏</a></td>
 
                           <td class="text-center">
                             <!-- <input class="form-check-input" type="checkbox"> -->
@@ -297,7 +289,7 @@
                               class="form-control d-inline-block w-50px"
                             />
                           </td>
-                          <td><a href="trip_member_icon_edit.html">小孩</a></td>
+                          <td><a href="place_type_edit.html">美食</a></td>
                           <td class="text-center">
                             <!-- <input class="form-check-input" type="checkbox"> -->
                             <div
@@ -353,38 +345,19 @@
     <script src="js/scripts.bundle.js"></script>
     <script src="js/main_popover.js"></script>
 
-    <!-- Modal start-->
-    <div
-      class="modal fade"
-      id="trip_member_modal"
-      tabindex="-1"
-      aria-labelledby="edit_label"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <div class="modal-title" id="edit_label">檢視行程旅伴</div>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">林小華</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-bs-dismiss="modal"
-            >
-              確認
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Modal end-->
+    <!--ckeditor start-->
+    <script src="js/ckeditor/ckeditor-classic.bundle.js"></script>
+    <script>
+      document.querySelectorAll(".ckeditor_classic").forEach((textarea) => {
+        ClassicEditor.create(textarea)
+          .then((editor) => {
+            console.log("Editor initialized for:", textarea);
+          })
+          .catch((error) => {
+            console.error("Error initializing editor:", error);
+          });
+      });
+    </script>
+    <!--ckeditor end-->
   </body>
 </html>
