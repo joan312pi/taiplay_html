@@ -73,7 +73,7 @@
                     <h2
                       class="page-heading d-flex flex-column justify-content-center my-0"
                     >
-                      台北文青二日遊-第一天
+                      台北文青二日遊
                     </h2>
                   </div>
                   <!--title end-->
@@ -82,85 +82,183 @@
               <!--page_title end-->
 
               <div class="app-container container-xxl pb-10">
-                <!--form_table start-->
-                <div class="form_table rounded border border-gray-300">
-                  <div class="row">
-                    <div class="col-md-2 col-form-label required">日期</div>
-                    <div class="col-md-10 form_font">2026/08/01</div>
-                  </div>
+                <!--tab menu start-->
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link hvr-overline-from-center active" id="tab_page_01" data-bs-toggle="tab" data-bs-target="#page_01" type="button" role="tab" aria-controls="page_01" aria-selected="true">第一天</button>
+                        <button class="nav-link hvr-overline-from-center" id="tab_page_02" data-bs-toggle="tab" data-bs-target="#page_02" type="button" role="tab" aria-controls="page_02" aria-selected="false">第二天</button>
+                    </div>
+                </nav>
+                <!--tab menu end-->
 
-                  <div class="row">
-                    <div class="col-md-2 col-form-label">地點 1</div>
-                    <div class="col-md-10 form_font">
-                      <div class="page_group w-75px">
-                        <div class="item">
-                          <div class="title">地點名稱</div>
-                          <div class="input_font input-auto">松山文創園區</div>
+                <!--tab con start-->
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="page_01" role="tabpanel" aria-labelledby="tab_page_01">
+                      <!--form_table start-->
+                      <div class="form_table rounded border border-gray-300">
+                        <div class="row">
+                          <div class="col-md-2 col-form-label required">日期</div>
+                          <div class="col-md-10 form_font">2026/08/01</div>
                         </div>
-                        <div class="item">
-                          <div class="title">費用</div>
-                          <div class="input_font input-auto">
-                            【餐飲】王小明 付 500 <br />
-                            【交通】王小明 付 100
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div class="row">
-                    <div class="col-md-2 col-form-label">地點 2</div>
-                    <div class="col-md-10 form_font">
-                      <div class="page_group w-75px">
-                        <div class="item">
-                          <div class="title">地點名稱</div>
-                          <div class="input_font input-auto">鼎泰豐</div>
-                        </div>
-                        <div class="item">
-                          <div class="title">費用</div>
-                          <div class="input_font input-auto">
-                            【餐飲】王小明 付 500 <br />
-                            【交通】王小明 付 100
+                        <div class="row">
+                          <div class="col-md-2 col-form-label">地點 1</div>
+                          <div class="col-md-10 form_font">
+                            <div class="page_group w-75px">
+                              <div class="item">
+                                <div class="title">地點名稱</div>
+                                <div class="input_font input-auto">松山文創園區</div>
+                              </div>
+                              <div class="item">
+                                <div class="title">費用</div>
+                                <div class="input_font input-auto">
+                                  【餐飲】王小明 付 500 <br />
+                                  【交通】王小明 付 100
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div class="row d-none">
-                    <div class="col-md-2 col-form-label">新增</div>
-                    <div class="col-md-4 form_font">
-                      <div class="page_group w-50px">
-                        <div class="item">
-                          <div class="title">人員</div>
-                          <div class="input_font input-auto">admin</div>
+                        <div class="row">
+                          <div class="col-md-2 col-form-label">地點 2</div>
+                          <div class="col-md-10 form_font">
+                            <div class="page_group w-75px">
+                              <div class="item">
+                                <div class="title">地點名稱</div>
+                                <div class="input_font input-auto">鼎泰豐</div>
+                              </div>
+                              <div class="item">
+                                <div class="title">費用</div>
+                                <div class="input_font input-auto">
+                                  【餐飲】王小明 付 500 <br />
+                                  【交通】王小明 付 100
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div class="item">
-                          <div class="title">時間</div>
-                          <div class="input_font input-auto">
-                            2024/09/12 10:07:29
+
+                        <div class="row d-none">
+                          <div class="col-md-2 col-form-label">新增</div>
+                          <div class="col-md-4 form_font">
+                            <div class="page_group w-50px">
+                              <div class="item">
+                                <div class="title">人員</div>
+                                <div class="input_font input-auto">admin</div>
+                              </div>
+                              <div class="item">
+                                <div class="title">時間</div>
+                                <div class="input_font input-auto">
+                                  2024/09/12 10:07:29
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-2 col-form-label">最後修改</div>
+                          <div class="col-md-4 form_font">
+                            <div class="page_group w-50px">
+                              <div class="item">
+                                <div class="title">人員</div>
+                                <div class="input_font input-auto">admin</div>
+                              </div>
+                              <div class="item">
+                                <div class="title">時間</div>
+                                <div class="input_font input-auto">
+                                  2024/09/12 10:07:29
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
+                      <!--form_table end-->
                     </div>
-                    <div class="col-md-2 col-form-label">最後修改</div>
-                    <div class="col-md-4 form_font">
-                      <div class="page_group w-50px">
-                        <div class="item">
-                          <div class="title">人員</div>
-                          <div class="input_font input-auto">admin</div>
+
+                    <div class="tab-pane fade" id="page_02" role="tabpanel" aria-labelledby="tab_page_02">
+                      <!--form_table start-->
+                      <div class="form_table rounded border border-gray-300">
+                        <div class="row">
+                          <div class="col-md-2 col-form-label required">日期</div>
+                          <div class="col-md-10 form_font">2026/08/02</div>
                         </div>
-                        <div class="item">
-                          <div class="title">時間</div>
-                          <div class="input_font input-auto">
-                            2024/09/12 10:07:29
+
+                        <div class="row">
+                          <div class="col-md-2 col-form-label">地點 1</div>
+                          <div class="col-md-10 form_font">
+                            <div class="page_group w-75px">
+                              <div class="item">
+                                <div class="title">地點名稱</div>
+                                <div class="input_font input-auto">松山文創園區</div>
+                              </div>
+                              <div class="item">
+                                <div class="title">費用</div>
+                                <div class="input_font input-auto">
+                                  【餐飲】王小明 付 500 <br />
+                                  【交通】王小明 付 100
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-2 col-form-label">地點 2</div>
+                          <div class="col-md-10 form_font">
+                            <div class="page_group w-75px">
+                              <div class="item">
+                                <div class="title">地點名稱</div>
+                                <div class="input_font input-auto">鼎泰豐</div>
+                              </div>
+                              <div class="item">
+                                <div class="title">費用</div>
+                                <div class="input_font input-auto">
+                                  【餐飲】王小明 付 500 <br />
+                                  【交通】王小明 付 100
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row d-none">
+                          <div class="col-md-2 col-form-label">新增</div>
+                          <div class="col-md-4 form_font">
+                            <div class="page_group w-50px">
+                              <div class="item">
+                                <div class="title">人員</div>
+                                <div class="input_font input-auto">admin</div>
+                              </div>
+                              <div class="item">
+                                <div class="title">時間</div>
+                                <div class="input_font input-auto">
+                                  2024/09/12 10:07:29
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-2 col-form-label">最後修改</div>
+                          <div class="col-md-4 form_font">
+                            <div class="page_group w-50px">
+                              <div class="item">
+                                <div class="title">人員</div>
+                                <div class="input_font input-auto">admin</div>
+                              </div>
+                              <div class="item">
+                                <div class="title">時間</div>
+                                <div class="input_font input-auto">
+                                  2024/09/12 10:07:29
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
+                      <!--form_table end-->
                     </div>
-                  </div>
+
                 </div>
-                <!--form_table end-->
+                <!--tab con end-->
 
                 <div class="btn_box pb-0">
                   <button
